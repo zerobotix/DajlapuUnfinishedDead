@@ -1,0 +1,151 @@
+﻿@{
+    ViewBag.Title = "Доска объявлений";
+}
+
+@section Styles {
+    <link href="~/Styles/animal-list.css" rel="stylesheet" />
+}
+
+@section Scripts {
+    <script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=Xc91SP-rHaQMdt5vAtjj_5Vq-AeAT7HR&lang=ru_RU&id=search-map"></script>
+    <script>
+        function toggleVisibility() {
+            var element = document.getElementById("filter-form");
+
+            if (element.style.display == "none")
+                element.style.display = "initial";
+            else
+                element.style.display = "none";
+        }
+    </script>
+}
+
+<div id="options-panel">
+    <span>Доска объявлений</span>
+
+    <i class="options-icon" onclick="toggleVisibility()"></i>
+    <div class="sort-dropdown">сначала новые <i class="glyphicon glyphicon-chevron-down"></i></div>
+</div>
+
+<div id="animals-photos">
+    <ul>
+        @{ for (int i = 0; i < 64; i++)
+            {
+                <li>
+                    <a href="#">
+                        <img src="~/Content/samples/dog-@(i % 24 + 1).png" />
+                    </a>
+                </li>
+            }
+        }
+    </ul>
+</div>
+
+<div id="filter-form" class="form">
+    <div class="search-type">
+        <div class="half-align">
+            <button>Найден</button>
+        </div><!--
+        --><div class="half-align">
+            <button>Пропал</button>
+        </div>
+    </div>
+    <div class="animal-type">
+        <div class="half-align">
+            <i class="dog-icon"></i>
+        </div><!--
+        --><div class="half-align">
+            <i class="cat-icon active"></i>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                Окрас
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="#">
+				    <input type="checkbox"><span class="lbl"> Every day</span>
+				</a></li>
+				    <li class="divider"></li>
+				<li><a href="#">
+				    <input type="checkbox">
+				    <span class="lbl"> Monday</span>
+			    </a></li>
+				<li><a href="#">
+				    <input type="checkbox"><span class="lbl">
+				    Tuesday</span>
+				</a></li>
+				<li><a href="#">
+				    <input type="checkbox"><span class="lbl">
+				    Wednesday</span>
+				</a></li>
+			    <li><a href="#">
+				    <input type="checkbox"><span class="lbl">
+				    Thursday</span>
+			    </a></li>
+			    <li><a href="#">
+				    <input type="checkbox"><span class="lbl">
+				    Friday</span>
+			    </a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                Размер
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                Порода
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" />
+            RIP
+        </label>
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" />
+            SOS
+        </label>
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" />
+            Передержка
+        </label>
+    </div>
+
+    <div class="result-count">
+        Найдено: 245 объявлений
+    </div>
+</div>
+
+<div id="search-map">
+
+</div>

@@ -1,0 +1,177 @@
+﻿.mixin-icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+.cat-gray-icon {
+  background: url("/Content/icons/form-cat-gray.png");
+}
+.feedback-icon {
+  display: inline-block;
+  vertical-align: middle;
+  background: url("/Content/icons/nav-feedback.png");
+  width: 17px;
+  height: 13px;
+  margin-right: 8px;
+}
+.paw-icon {
+  display: inline-block;
+  vertical-align: middle;
+  background: url("/Content/icons/nav-paw.png");
+  width: 19px;
+  height: 18px;
+  margin-right: 8px;
+}
+.profile-icon {
+  display: inline-block;
+  vertical-align: middle;
+  background: url("/Content/icons/nav-profile.png");
+  width: 18px;
+  height: 19px;
+  margin-right: 8px;
+}
+.twitter-icon {
+  display: inline-block;
+  vertical-align: middle;
+  background: url("/Content/icons/social-twitter.png");
+  width: 26px;
+  height: 26px;
+}
+.facebook-icon {
+  display: inline-block;
+  vertical-align: middle;
+  background: url("/Content/icons/social-facebook.png");
+  width: 26px;
+  height: 26px;
+}
+.vkontakte-icon {
+  display: inline-block;
+  vertical-align: middle;
+  background: url("/Content/icons/social-vkontakte.png");
+  width: 26px;
+  height: 26px;
+}
+.odnoklassniki-icon {
+  display: inline-block;
+  vertical-align: middle;
+  background: url("/Content/icons/social-odnoklassniki.png");
+  width: 26px;
+  height: 26px;
+}
+.google-plus-icon {
+  display: inline-block;
+  vertical-align: middle;
+  background: url("/Content/icons/social-google-plus.png");
+  width: 26px;
+  height: 26px;
+}
+.mail-ru-icon {
+  display: inline-block;
+  vertical-align: middle;
+  background: url("/Content/icons/social-mail-ru.png");
+  width: 26px;
+  height: 26px;
+}
+.options-icon {
+  display: inline-block;
+  vertical-align: middle;
+  background: url("/Content/icons/options.png");
+  width: 19px;
+  height: 16px;
+  cursor: pointer;
+}
+.dog-icon {
+  display: inline-block;
+  vertical-align: middle;
+  background: url("/Content/icons/form-dog-gray.png");
+  width: 37px;
+  height: 34px;
+}
+.dog-icon.active {
+  background: url("/Content/icons/form-dog-green.png");
+}
+.cat-icon {
+  display: inline-block;
+  vertical-align: middle;
+  background: url("/Content/icons/form-cat-gray.png");
+  width: 33px;
+  height: 31px;
+}
+.cat-icon.active {
+  background: url("/Content/icons/form-cat-green.png");
+}
+body {
+  padding-top: 50px;
+}
+#navbar .navbar-brand {
+  margin-right: 30px;
+}
+#navbar .database-button {
+  padding: 3px 5px;
+  margin: 12px 5px;
+  border-radius: 2px;
+  border: 1px solid #f4f2f1;
+  background-color: none;
+  color: #f4f2f1;
+}
+#navbar .database-button:hover {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+#navbar .database-button.active {
+  color: black;
+  background-color: #f4f2f1;
+}
+#navbar .found-button {
+  padding: 3px 5px;
+  margin: 12px 5px;
+  border-radius: 2px;
+  border: 1px solid #98d603;
+  background-color: none;
+  color: #98d603;
+}
+#navbar .found-button:hover {
+  border-color: #b7fc10;
+  color: #cdfd5c;
+}
+#navbar .found-button.active {
+  color: black;
+  background-color: #98d603;
+}
+#navbar .lost-button {
+  padding: 3px 5px;
+  margin: 12px 5px;
+  border-radius: 2px;
+  border: 1px solid #27aae1;
+  background-color: none;
+  color: #27aae1;
+}
+#navbar .lost-button:hover {
+  border-color: #54bce7;
+  color: #97d6f1;
+}
+#navbar .lost-button.active {
+  color: black;
+  background-color: #27aae1;
+}
+footer {
+  border-top: 1px solid gray;
+  padding: 10px 0;
+  height: 50px;
+}
+footer .copyright-text {
+  float: left;
+  line-height: 30px;
+}
+footer .right-align {
+  float: right;
+  line-height: 30px;
+}
+footer .right-align .social-icons,
+footer .right-align .language {
+  display: inline-block;
+  margin-left: 10px;
+}
+.container {
+  width: auto;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImljb25zLmxlc3MiLCJfbGF5b3V0Lmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxxQkFBQTtFQUNBLHNCQUFBOztBQUdKO0VBQ0ksZ0JBQWdCLG1DQUFoQjs7QUFHSjtFQVJJLHFCQUFBO0VBQ0Esc0JBQUE7RUFTQSxnQkFBZ0Isa0NBQWhCO0VBQ0EsV0FBQTtFQUNBLFlBQUE7RUFDQSxpQkFBQTs7QUFHSjtFQWhCSSxxQkFBQTtFQUNBLHNCQUFBO0VBaUJBLGdCQUFnQiw2QkFBaEI7RUFDQSxXQUFBO0VBQ0EsWUFBQTtFQUNBLGlCQUFBOztBQUdKO0VBeEJJLHFCQUFBO0VBQ0Esc0JBQUE7RUF5QkEsZ0JBQWdCLGlDQUFoQjtFQUNBLFdBQUE7RUFDQSxZQUFBO0VBQ0EsaUJBQUE7O0FBSUo7RUFqQ0kscUJBQUE7RUFDQSxzQkFBQTtFQWtDQSxnQkFBZ0Isb0NBQWhCO0VBQ0EsV0FBQTtFQUNBLFlBQUE7O0FBRUo7RUF2Q0kscUJBQUE7RUFDQSxzQkFBQTtFQXdDQSxnQkFBZ0IscUNBQWhCO0VBQ0EsV0FBQTtFQUNBLFlBQUE7O0FBRUo7RUE3Q0kscUJBQUE7RUFDQSxzQkFBQTtFQThDQSxnQkFBZ0Isc0NBQWhCO0VBQ0EsV0FBQTtFQUNBLFlBQUE7O0FBRUo7RUFuREkscUJBQUE7RUFDQSxzQkFBQTtFQW9EQSxnQkFBZ0IsMENBQWhCO0VBQ0EsV0FBQTtFQUNBLFlBQUE7O0FBRUo7RUF6REkscUJBQUE7RUFDQSxzQkFBQTtFQTBEQSxnQkFBZ0Isd0NBQWhCO0VBQ0EsV0FBQTtFQUNBLFlBQUE7O0FBRUo7RUEvREkscUJBQUE7RUFDQSxzQkFBQTtFQWdFQSxnQkFBZ0Isb0NBQWhCO0VBQ0EsV0FBQTtFQUNBLFlBQUE7O0FBR0o7RUF0RUkscUJBQUE7RUFDQSxzQkFBQTtFQXVFQSxnQkFBZ0IsNkJBQWhCO0VBQ0EsV0FBQTtFQUNBLFlBQUE7RUFFQSxlQUFBOztBQUdKO0VBL0VJLHFCQUFBO0VBQ0Esc0JBQUE7RUFnRkEsZ0JBQWdCLG1DQUFoQjtFQUNBLFdBQUE7RUFDQSxZQUFBOztBQUVBLFNBQUM7RUFDRyxnQkFBZ0Isb0NBQWhCOztBQUlSO0VBMUZJLHFCQUFBO0VBQ0Esc0JBQUE7RUEyRkEsZ0JBQWdCLG1DQUFoQjtFQUNBLFdBQUE7RUFDQSxZQUFBOztBQUVBLFNBQUM7RUFDRyxnQkFBZ0Isb0NBQWhCOztBQzVGUjtFQUNJLGlCQUFBOztBQUdKLE9BQ0k7RUFDSSxrQkFBQTs7QUFGUixPQXFCSTtFQWhCSSxnQkFBQTtFQUNBLGdCQUFBO0VBQ0Esa0JBQUE7RUFDQSx5QkFBQTtFQUNBLHNCQUFBO0VBQ0EsY0FBQTs7QUFFQSxPQVNKLGlCQVRLO0VBQ0cscUJBQUE7RUFDQSxjQUFBOztBQUVKLE9BS0osaUJBTEs7RUFDRyxZQUFBO0VBQ0EseUJBQUE7O0FBbEJaLE9Bd0JJO0VBbkJJLGdCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxrQkFBQTtFQUNBLHlCQUFBO0VBQ0Esc0JBQUE7RUFDQSxjQUFBOztBQUVBLE9BWUosY0FaSztFQUNHLHFCQUFBO0VBQ0EsY0FBQTs7QUFFSixPQVFKLGNBUks7RUFDRyxZQUFBO0VBQ0EseUJBQUE7O0FBbEJaLE9BMkJJO0VBdEJJLGdCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxrQkFBQTtFQUNBLHlCQUFBO0VBQ0Esc0JBQUE7RUFDQSxjQUFBOztBQUVBLE9BZUosYUFmSztFQUNHLHFCQUFBO0VBQ0EsY0FBQTs7QUFFSixPQVdKLGFBWEs7RUFDRyxZQUFBO0VBQ0EseUJBQUE7O0FBY1o7RUFDSSwwQkFBQTtFQUNBLGVBQUE7RUFDQSxZQUFBOztBQUhKLE1BS0k7RUFDSSxXQUFBO0VBQ0EsaUJBQUE7O0FBUFIsTUFVSTtFQUNJLFlBQUE7RUFDQSxpQkFBQTs7QUFaUixNQVVJLGFBSUk7QUFkUixNQVVJLGFBSW1CO0VBQ1gscUJBQUE7RUFDQSxpQkFBQTs7QUFPUjtFQUVJLFdBQUEiLCJmaWxlIjoidW5kZWZpbmVkIn0= */

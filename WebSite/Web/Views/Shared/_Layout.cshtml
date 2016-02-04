@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Дай лапу</title>
+    <link href="~/Styles/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Styles/shared/_layout.css" rel="stylesheet" type="text/css" />
+    @RenderSection("Styles", false)
+</head>
+
+<body>
+    <nav id="navbar" class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="~/" class="navbar-brand"><img src="~/Content/icons/logo.png" /></a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="@Url.Action("List", "Animal")" class="database-button">Доска объявлений</a></li>
+                    <li><a href="@Url.Action("Add", "Animal")" class="found-button active">Найден</a></li>
+                    <li><a href="@Url.Action("Add", "Animal")" class="lost-button">Пропал</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><i class="paw-icon"></i>О нас</a></li>
+                    <li><a href="#"><i class="feedback-icon"></i>Обратная связь</a></li>
+                    <li><a href="#"><i class="profile-icon"></i>Мой кабинет</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="#page-content">
+        @RenderBody()
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="copyright-text">Copyright &copy; @DateTime.Now.Year - Дай лапу</div>
+            <div class="right-align">
+                <div class="social-icons">
+                    Рассказать друзьям:
+                    <i class="twitter-icon"></i>
+                    <i class="facebook-icon"></i>
+                    <i class="vkontakte-icon"></i>
+                    <i class="odnoklassniki-icon"></i>
+                    <i class="google-plus-icon"></i>
+                    <i class="mail-ru-icon"></i>
+                </div>
+                <div class="language">Язык: <u>Ru</u></div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/Scripts/lib/jquery-2.2.0.min.js"></script>
+    <script src="~/Scripts/lib/bootstrap.min.js"></script>
+    @RenderSection("Scripts", false)
+</body>
+</html>

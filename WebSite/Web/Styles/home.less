@@ -1,0 +1,68 @@
+﻿@green-color: #98d603;
+@blue-color: #27aae1;
+
+.mixin-clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+.carousel {
+    .carousel-indicators {
+        li {
+            border: 1px solid gray;
+        }
+        .active {
+            background-color: #b6ff00;
+        }
+    }
+}
+
+#bottom-text-block {
+    background-color: @green-color;
+    text-align: center;
+
+    .left-align {
+        text-transform: uppercase;
+        font-size: 25px;
+        max-width: 300px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .right-align {
+        max-width: 300px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+#feedback-block {
+    .text, form, img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .text {
+        max-width: 420px;
+        text-align: center;
+        margin-bottom: 25px;
+
+        h2 {
+            text-transform: uppercase;
+        }
+    }
+
+    form {
+        max-width: 750px;
+        .mixin-clearfix;
+
+        button {
+            float: right;
+            border: 0;
+            background-color: @green-color;
+        }
+    }
+
+}

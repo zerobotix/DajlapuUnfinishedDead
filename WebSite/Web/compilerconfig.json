@@ -1,0 +1,22 @@
+﻿[
+  {
+    "outputFile": "Styles/shared/_layout.css",
+    "inputFile": "Styles/shared/_layout.less"
+  },
+  {
+    "outputFile": "Styles/home.css",
+    "inputFile": "Styles/home.less"
+  },
+  {
+    "outputFile": "Styles/shared/icons.css",
+    "inputFile": "Styles/shared/icons.less"
+  },
+  {
+    "outputFile": "Styles/animal-list.css",
+    "inputFile": "Styles/animal-list.less"
+  },
+  {
+    "outputFile": "Styles/animal-add.css",
+    "inputFile": "Styles/animal-add.less"
+  }
+]

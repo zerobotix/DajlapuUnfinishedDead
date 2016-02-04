@@ -1,0 +1,70 @@
+﻿@import "icons.less";
+
+@gray-color: #f4f2f1;
+@green-color: #98d603;
+@blue-color: #27aae1;
+
+body {
+    padding-top: 50px; // отступ от фиксированного навбара
+}
+
+#navbar {
+    .navbar-brand {
+        margin-right: 30px;
+    }
+    .mixin-button(@color) {
+        padding: 3px 5px;
+        margin: 12px 5px;
+        border-radius: 2px;
+        border: 1px solid @color;
+        background-color: none;
+        color: @color;
+
+        &:hover {
+            border-color: lighten(@color, 10%);
+            color: lighten(@color, 25%);
+        }
+        &.active {
+            color: black;
+            background-color: @color;
+        }
+    }
+    .database-button {
+        .mixin-button(@gray-color);
+    }
+    .found-button {
+        .mixin-button(@green-color);
+    }
+    .lost-button {
+        .mixin-button(@blue-color);
+    }
+}
+
+footer {
+    border-top: 1px solid gray;
+    padding: 10px 0;
+    height: 50px;
+
+    .copyright-text {
+        float:left;
+        line-height:30px;
+    }
+
+    .right-align {
+        float:right;
+        line-height:30px;
+
+        .social-icons, .language {
+            display: inline-block;
+            margin-left: 10px;
+        }
+    }
+}
+
+// extend bootstrap container class for larger resolutions
+//@media (min-width: 1500px) {
+    .container {
+        //max-width: 1480px;
+        width: auto;
+    }
+//}
