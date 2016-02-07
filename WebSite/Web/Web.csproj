@@ -275,6 +275,7 @@
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
+    <None Include="Properties\PublishProfiles\dajlapu.moo.com.pubxml" />
     <None Include="Scripts\lib\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\lib\jquery-2.2.0.js" />
     <Content Include="Scripts\lib\jquery-2.2.0.min.js" />
