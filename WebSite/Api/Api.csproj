@@ -232,7 +232,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Contracts\Contracts.csproj">
+    <ProjectReference Include="..\Contracts\Contracts.csproj">
       <Project>{D774DB50-5460-40A2-997F-5F98820355A8}</Project>
       <Name>Contracts</Name>
     </ProjectReference>
