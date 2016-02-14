@@ -1,1 +1,19 @@
-﻿
+﻿.mixin-clearfix:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+#add-map {
+  width: 100%;
+  height: 200px;
+}
+#add-form form:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+#add-form form fieldset {
+  float: left;
+  width: 25%;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFuaW1hbC1hZGQubGVzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDSSxlQUFDO0VBQ0csU0FBUyxHQUFUO0VBQ0EsY0FBQTtFQUNBLFdBQUE7O0FBSVI7RUFDSSxXQUFBO0VBQ0EsYUFBQTs7QUFUQSxTQWFBLEtBYkM7RUFDRyxTQUFTLEdBQVQ7RUFDQSxjQUFBO0VBQ0EsV0FBQTs7QUFTUixTQUNJLEtBR0k7RUFDSSxXQUFBO0VBQ0EsVUFBQSIsImZpbGUiOiJ1bmRlZmluZWQifQ== */

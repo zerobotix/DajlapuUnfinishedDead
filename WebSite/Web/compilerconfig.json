@@ -18,5 +18,9 @@
   {
     "outputFile": "Styles/animal-add.css",
     "inputFile": "Styles/animal-add.less"
-  }
+  },
+  {
+    "outputFile": "Styles/shared/fonts.css",
+    "inputFile": "Styles/shared/fonts.less"
+  },
 ]

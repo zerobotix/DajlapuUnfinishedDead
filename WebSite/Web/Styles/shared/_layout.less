@@ -1,8 +1,15 @@
 ﻿@import "icons.less";
+@import "fonts.less";
 
 @gray-color: #f4f2f1;
 @green-color: #98d603;
 @blue-color: #27aae1;
+
+html {
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: normal;
+}
 
 body {
     padding-top: 50px; // отступ от фиксированного навбара
@@ -41,23 +48,25 @@ body {
 }
 
 footer {
-    border-top: 1px solid gray;
+    //border-top: 1px solid gray;
     padding: 10px 0;
     height: 50px;
+    background-color: #333333;
+    color: white;
 
-    .copyright-text {
-        float:left;
-        line-height:30px;
+    .copyright-text, .social-icons, .language {
+        float: left;
+        width: 33%;
+        line-height: 30px;
     }
-
-    .right-align {
-        float:right;
-        line-height:30px;
-
-        .social-icons, .language {
-            display: inline-block;
-            margin-left: 10px;
-        }
+    .copyright-text {
+        text-align: left;
+    }
+    .social-icons {
+        text-align: center;
+    }
+    .language {
+        text-align: right;
     }
 }
 
