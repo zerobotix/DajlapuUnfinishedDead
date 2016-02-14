@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{79901E6A-EFFB-4492-BFE7-2B32F64A1DAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Api\Api.csproj", "{D9BA60BE-12A9-4F18-B9D9-BC0E463FEEF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "..\Contracts\Contracts.csproj", "{D774DB50-5460-40A2-997F-5F98820355A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{79901E6A-EFFB-4492-BFE7-2B32F64A1DAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79901E6A-EFFB-4492-BFE7-2B32F64A1DAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79901E6A-EFFB-4492-BFE7-2B32F64A1DAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9BA60BE-12A9-4F18-B9D9-BC0E463FEEF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9BA60BE-12A9-4F18-B9D9-BC0E463FEEF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9BA60BE-12A9-4F18-B9D9-BC0E463FEEF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9BA60BE-12A9-4F18-B9D9-BC0E463FEEF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D774DB50-5460-40A2-997F-5F98820355A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D774DB50-5460-40A2-997F-5F98820355A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D774DB50-5460-40A2-997F-5F98820355A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D774DB50-5460-40A2-997F-5F98820355A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
