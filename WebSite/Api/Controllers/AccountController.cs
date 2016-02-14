@@ -13,11 +13,13 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
-using DajLapu.Web.Models;
-using DajLapu.Web.Providers;
-using DajLapu.Web.Results;
+using DajLapu.Api.Models;
+using DajLapu.Api.Providers;
+using DajLapu.Api.Results;
+using DajLapu.Contracts.Requests;
+using DajLapu.Contracts.Responses;
 
-namespace DajLapu.Web.Controllers
+namespace DajLapu.Api.Controllers
 {
 	[Authorize]
 	[RoutePrefix("api/Account")]

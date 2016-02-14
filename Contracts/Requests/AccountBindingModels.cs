@@ -1,8 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using Newtonsoft.Json;
 
-namespace DajLapu.Web.Models
+namespace DajLapu.Contracts.Requests
 {
 	// Models used as parameters to AccountController actions.
 

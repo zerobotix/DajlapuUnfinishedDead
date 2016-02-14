@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Net;
+﻿using System.Configuration;
 using System.Net.Mail;
 using System.Threading.Tasks;
-using System.Web;
 using Microsoft.AspNet.Identity;
 
-namespace DajLapu.Web.Services
+namespace DajLapu.Api.Services
 {
 	public class EmailService : IIdentityMessageService
 	{
