@@ -3,5 +3,87 @@
     ViewBag.Title = "Добавление";
 }
 
-<h2>Add</h2>
+@section Styles {
+    <link href="~/Styles/animal-add.css" rel="stylesheet" />
+}
 
+@section Scripts {
+    <script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=Xc91SP-rHaQMdt5vAtjj_5Vq-AeAT7HR&lang=ru_RU&id=add-map"></script>
+    <script></script>
+}
+
+<div id="add-map">
+
+</div>
+
+<div id="add-form">
+    <div class="header">
+        Найден
+        <i class="hint-icon">?</i>
+        <div class="hint-content"></div>
+    </div>
+    <form>
+        <fieldset>
+            <div class="animal-type">
+                <i class="dog-icon"></i>
+                <i class="cat-icon active"></i>
+            </div>
+            <div class="sex-type">
+                <i class="male-icon">М</i>
+                <i class="female-icon">Ж</i>
+                @*<i class="unknown-icon"></i>*@
+            </div>
+            <div class="size-type">
+                <i class="s-size-icon">S</i>
+                <i class="m-size-icon">M</i>
+                <i class="l-size-icon">L</i>
+            </div>
+        </fieldset>
+        <fieldset>
+            <div class="color-type">
+                <select><option>окрас</option></select>
+            </div>
+            <div class="breed-type">
+                <select><option>порода</option></select>
+            </div>
+            <div class="found-time">
+                <input type="text" placeholder="время обнаружения" />
+            </div>
+            <div class="phone">
+                <input type="text" placeholder="телефон" />
+            </div>
+            <div class="email">
+                <input type="text" placeholder="e-mail" />
+            </div>
+        </fieldset>
+        <fieldset>
+            <textarea placeholder="подробное описание"></textarea>
+        </fieldset>
+        <fieldset>
+            <div class="photos">
+                <button>+</button>
+                <button>+</button>
+                <button>+</button>
+            </div>
+            <div class="additional-options">
+                <label>
+                    <input type="checkbox" />
+                    Передержка
+                </label>
+                <label>
+                    <input type="checkbox" />
+                    SOS
+                </label>
+                <label>
+                    <input type="checkbox" />
+                    RIP
+                </label>
+            </div>
+            <button type="submit">Добавить</button>
+        </fieldset>
+    </form>
+</div>
+
+<div id="banner">
+    <img src="http://placehold.it/800x300" />
+</div>

@@ -184,6 +184,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\fonts\HelveticaNeueCyr-Bold.svg" />
+    <Content Include="Content\fonts\HelveticaNeueCyr-Italic.svg" />
+    <Content Include="Content\fonts\HelveticaNeueCyr-Light.svg" />
     <Content Include="Content\icons\form-cat-gray.png" />
     <Content Include="Content\icons\form-cat-green.png" />
     <Content Include="Content\icons\form-dog-gray.png" />
@@ -205,6 +208,7 @@
     <Content Include="Content\icons\social-vkontakte.png" />
     <Content Include="Content\images\home-bottom.jpg" />
     <Content Include="Content\images\slider-1.jpg" />
+    <Content Include="Styles\lib\normalize.css" />
     <Content Include="Content\samples\dog-1.png" />
     <Content Include="Content\samples\dog-10.png" />
     <Content Include="Content\samples\dog-11.png" />
@@ -231,6 +235,8 @@
     <Content Include="Content\samples\dog-9.png" />
     <Content Include="Scripts\animal-add.js" />
     <Content Include="Scripts\home.js" />
+    <Content Include="Scripts\lib\knockout-3.4.0.debug.js" />
+    <Content Include="Scripts\lib\knockout-3.4.0.js" />
     <Content Include="Styles\animal-add.css">
       <DependentUpon>animal-add.less</DependentUpon>
     </Content>
@@ -256,6 +262,22 @@
     </Content>
     <Content Include="Styles\home.min.css">
       <DependentUpon>home.css</DependentUpon>
+    </Content>
+    <Content Include="Content\fonts\HelveticaNeueCyr-Bold.eot" />
+    <Content Include="Content\fonts\HelveticaNeueCyr-Bold.ttf" />
+    <Content Include="Content\fonts\HelveticaNeueCyr-Bold.woff" />
+    <Content Include="Content\fonts\HelveticaNeueCyr-Italic.eot" />
+    <Content Include="Content\fonts\HelveticaNeueCyr-Italic.ttf" />
+    <Content Include="Content\fonts\HelveticaNeueCyr-Italic.woff" />
+    <Content Include="Content\fonts\HelveticaNeueCyr-Light.eot" />
+    <Content Include="Content\fonts\HelveticaNeueCyr-Light.ttf" />
+    <Content Include="Content\fonts\HelveticaNeueCyr-Light.woff" />
+    <None Include="Styles\shared\fonts.less" />
+    <Content Include="Styles\shared\fonts.css">
+      <DependentUpon>fonts.less</DependentUpon>
+    </Content>
+    <Content Include="Styles\shared\fonts.min.css">
+      <DependentUpon>fonts.css</DependentUpon>
     </Content>
     <Content Include="Styles\shared\icons.css">
       <DependentUpon>icons.less</DependentUpon>

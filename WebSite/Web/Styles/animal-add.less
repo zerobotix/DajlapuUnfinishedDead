@@ -1,2 +1,24 @@
-﻿body {
+﻿.mixin-clearfix {
+    &:after {
+        content: " ";
+        display: table;
+        clear: both;
+    }
 }
+
+#add-map {
+    width: 100%;
+    height: 200px;
+}
+
+#add-form {
+    form {
+        .mixin-clearfix;
+
+        fieldset {
+            float: left;
+            width: 25%;
+        }
+    }
+}
+

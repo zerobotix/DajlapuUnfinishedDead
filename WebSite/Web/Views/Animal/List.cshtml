@@ -8,135 +8,94 @@
 
 @section Scripts {
     <script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=Xc91SP-rHaQMdt5vAtjj_5Vq-AeAT7HR&lang=ru_RU&id=search-map"></script>
-    <script>
-        function toggleVisibility() {
-            var element = document.getElementById("filter-form");
-
-            if (element.style.display == "none")
-                element.style.display = "initial";
-            else
-                element.style.display = "none";
-        }
-    </script>
+    <script></script>
 }
 
-<div id="options-panel">
-    <span>Доска объявлений</span>
-
-    <i class="options-icon" onclick="toggleVisibility()"></i>
-    <div class="sort-dropdown">сначала новые <i class="glyphicon glyphicon-chevron-down"></i></div>
-</div>
-
-<div id="animals-photos">
-    <ul>
-        @{ for (int i = 0; i < 64; i++)
-            {
-                <li>
-                    <a href="#">
-                        <img src="~/Content/samples/dog-@(i % 24 + 1).png" />
-                    </a>
-                </li>
-            }
-        }
-    </ul>
-</div>
-
-<div id="filter-form" class="form">
+<div id="filter-form">
+    <div class="form-header">Доска объявлений</div>
     <div class="search-type">
-        <div class="half-align">
-            <button>Найден</button>
-        </div><!--
-        --><div class="half-align">
-            <button>Пропал</button>
-        </div>
+        <div class="button active">Найден</div>
+        <div class="button">Пропал</div>
     </div>
     <div class="animal-type">
-        <div class="half-align">
-            <i class="dog-icon"></i>
-        </div><!--
-        --><div class="half-align">
-            <i class="cat-icon active"></i>
+        <i class="dog-icon"></i>
+        <i class="cat-icon active"></i>
+    </div>
+    <div class="sex-type">
+        <div class="header">Пол</div>
+        <div class="options">
+            <i class="male-icon">М</i>
+            <i class="female-icon">Ж</i>
+            @*<i class="unknown-icon"></i>*@
         </div>
     </div>
-    <div class="form-group">
-        <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
-                Окрас
-                <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-                <li><a href="#">
-				    <input type="checkbox"><span class="lbl"> Every day</span>
-				</a></li>
-				    <li class="divider"></li>
-				<li><a href="#">
-				    <input type="checkbox">
-				    <span class="lbl"> Monday</span>
-			    </a></li>
-				<li><a href="#">
-				    <input type="checkbox"><span class="lbl">
-				    Tuesday</span>
-				</a></li>
-				<li><a href="#">
-				    <input type="checkbox"><span class="lbl">
-				    Wednesday</span>
-				</a></li>
-			    <li><a href="#">
-				    <input type="checkbox"><span class="lbl">
-				    Thursday</span>
-			    </a></li>
-			    <li><a href="#">
-				    <input type="checkbox"><span class="lbl">
-				    Friday</span>
-			    </a></li>
-            </ul>
+    <div class="size-type">
+        <div class="header active">Размер</div>
+        <div class="options">
+            <i class="s-size-icon">S</i>
+            <i class="m-size-icon">M</i>
+            <i class="l-size-icon">L</i>
         </div>
     </div>
-    <div class="form-group">
-        <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
-                Размер
-                <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-            </ul>
+    <div class="color-type">
+        <div class="header">Окрас</div>
+        <div class="options">
+            @foreach (var color in new List<string> { "бе", "чер", "красный", "син" })
+            {
+            <label class="checkbox">
+                <input type="checkbox" />
+                <i class="checkbox-icon"></i>
+                @(string.Format("{0} {0} {0} {0} {0}", color))
+            </label>
+            }
         </div>
     </div>
-    <div class="form-group">
-        <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
-                Порода
-                <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-            </ul>
+    <div class="breed-type">
+        <div class="header">Порода</div>
+        <div class="search">
+            <input type="text" placeholder="Поиск..." />
+            <i class="search-icon">S</i>
+        </div>
+        <div class="options">
+            @{
+                foreach (var breed in new List<string> { "порода 1", "порода 2", "порода 3", "порода 4" })
+                {
+            <label class="checkbox">
+                <input type="checkbox" />
+                <i class="checkbox-icon"></i>
+                @(breed)
+            </label>
+                }
+            }
+            <select>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+            </select>
         </div>
     </div>
-    <div class="checkbox">
-        <label>
+    <div class="found-time">
+        <div class="header">Время обнаружения</div>
+        <div class="options">
+            <input type="date" />
+            <input type="date" />
+        </div>
+    </div>
+
+    <div class="additional-options">
+        <label class="checkbox">
             <input type="checkbox" />
+            <i class="checkbox-icon"></i>
             RIP
         </label>
-    </div>
-    <div class="checkbox">
-        <label>
+        <label class="checkbox">
             <input type="checkbox" />
+            <i class="checkbox-icon"></i>
             SOS
         </label>
-    </div>
-    <div class="checkbox">
-        <label>
+        <label class="checkbox">
             <input type="checkbox" />
+            <i class="checkbox-icon"></i>
             Передержка
         </label>
     </div>
@@ -146,6 +105,18 @@
     </div>
 </div>
 
-<div id="search-map">
+<div class="results-container">
+    <div id="animals-list">
+        @for (var i = 0; i < 64; i++)
+        {
+        <div class="animal-preview">
+            <a href="#">
+                <img src="~/Content/samples/dog-@(i % 24 + 1).png" />
+            </a>
+        </div>
+        }
+    </div>
 
+    <div id="search-map">
+    </div>
 </div>
