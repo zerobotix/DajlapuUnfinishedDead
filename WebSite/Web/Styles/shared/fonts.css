@@ -1,0 +1,26 @@
+﻿/* 
+    чтобы шрифты грузились на сайте, в иис нужно добавить mime types:
+    .otf - font/opentype 
+*/
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('/Content/fonts/HelveticaNeueCyr-Light.eot');
+  src: local('☺'), url('/Content/fonts/HelveticaNeueCyr-Light.woff') format('woff'), url('fonts/HelveticaNeueCyr-Light.ttf') format('truetype'), url('/Content/fonts/HelveticaNeueCyr-Light.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('/Content/fonts/HelveticaNeueCyr-Bold.eot');
+  src: local('☺'), url('/Content/fonts/HelveticaNeueCyr-Bold.woff') format('woff'), url('fonts/HelveticaNeueCyr-Bold.ttf') format('truetype'), url('/Content/fonts/HelveticaNeueCyr-Bold.svg') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('/Content/fonts/HelveticaNeueCyr-Italic.eot');
+  src: local('☺'), url('/Content/fonts/HelveticaNeueCyr-Italic.woff') format('woff'), url('fonts/HelveticaNeueCyr-Italic.ttf') format('truetype'), url('/Content/fonts/HelveticaNeueCyr-Italic.svg') format('svg');
+  font-weight: normal;
+  font-style: italic;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImZvbnRzLmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7OztBQUtBO0VBQ0MsYUFBYSxnQkFBYjtFQUNBLFNBQVMsNENBQVQ7RUFDQSxLQUFLLE1BQU0sVUFBVSw4Q0FBOEMsT0FBTyxhQUFhLG9DQUFvQyxPQUFPLGlCQUFpQiw2Q0FBNkMsT0FBTyxNQUF2TTtFQUNBLG1CQUFBO0VBQ0Esa0JBQUE7O0FBR0Q7RUFDQyxhQUFhLGdCQUFiO0VBQ0EsU0FBUywyQ0FBVDtFQUNBLEtBQUssTUFBTSxVQUFVLDZDQUE2QyxPQUFPLGFBQWEsbUNBQW1DLE9BQU8saUJBQWlCLDRDQUE0QyxPQUFPLE1BQXBNO0VBQ0EsaUJBQUE7RUFDQSxrQkFBQTs7QUFHRDtFQUNDLGFBQWEsZ0JBQWI7RUFDQSxTQUFTLDZDQUFUO0VBQ0EsS0FBSyxNQUFNLFVBQVUsK0NBQStDLE9BQU8sYUFBYSxxQ0FBcUMsT0FBTyxpQkFBaUIsOENBQThDLE9BQU8sTUFBMU07RUFDQSxtQkFBQTtFQUNBLGtCQUFBIiwiZmlsZSI6InVuZGVmaW5lZCJ9 */
