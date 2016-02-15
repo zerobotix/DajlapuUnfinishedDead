@@ -8,38 +8,40 @@
 
 @section Scripts {
     <script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=Xc91SP-rHaQMdt5vAtjj_5Vq-AeAT7HR&lang=ru_RU&id=search-map"></script>
-    <script></script>
+    <script src="~/Scripts/animal-list.js"></script>
 }
 
 <div id="filter-form">
     <div class="form-header">Доска объявлений</div>
     <div class="search-type">
-        <div class="button active">Найден</div>
-        <div class="button">Пропал</div>
+        @*<label class="checkbox">*@
+            <div class="button active">Найден</div>
+            <div class="button">Пропал</div>
+        @*</label>*@
     </div>
     <div class="animal-type">
         <i class="dog-icon"></i>
         <i class="cat-icon active"></i>
     </div>
     <div class="sex-type">
-        <div class="header">Пол</div>
-        <div class="options">
+        <div class="header js-accordion">Пол</div>
+        <div class="options js-item">
             <i class="male-icon">М</i>
             <i class="female-icon">Ж</i>
             @*<i class="unknown-icon"></i>*@
         </div>
     </div>
     <div class="size-type">
-        <div class="header active">Размер</div>
-        <div class="options">
+        <div class="header js-accordion">Размер</div>
+        <div class="options js-item">
             <i class="s-size-icon">S</i>
             <i class="m-size-icon">M</i>
             <i class="l-size-icon">L</i>
         </div>
     </div>
     <div class="color-type">
-        <div class="header">Окрас</div>
-        <div class="options">
+        <div class="header js-accordion">Окрас</div>
+        <div class="options js-item">
             @foreach (var color in new List<string> { "бе", "чер", "красный", "син" })
             {
             <label class="checkbox">
@@ -51,12 +53,12 @@
         </div>
     </div>
     <div class="breed-type">
-        <div class="header">Порода</div>
-        <div class="search">
+        <div class="header js-accordion">Порода</div>
+        <div class="search js-item">
             <input type="text" placeholder="Поиск..." />
             <i class="search-icon">S</i>
         </div>
-        <div class="options">
+        <div class="options js-item">
             @{
                 foreach (var breed in new List<string> { "порода 1", "порода 2", "порода 3", "порода 4" })
                 {
@@ -75,8 +77,8 @@
         </div>
     </div>
     <div class="found-time">
-        <div class="header">Время обнаружения</div>
-        <div class="options">
+        <div class="header js-accordion">Время обнаружения</div>
+        <div class="options js-item">
             <input type="date" />
             <input type="date" />
         </div>

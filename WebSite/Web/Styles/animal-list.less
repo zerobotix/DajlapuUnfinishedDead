@@ -5,8 +5,6 @@
 @footer-height: 50px;
 @filter-width: 250px;
 
-
-
 label.checkbox {
     padding-left: 20px;
     position: relative;
@@ -75,6 +73,7 @@ label.checkbox {
             //font-size: 13px;
             width: 100px;
             margin: 0 2px;
+            cursor: pointer;
 
             &.active {
                 background-color: @green-color;
@@ -94,6 +93,7 @@ label.checkbox {
 
     .sex-type, .size-type, .color-type, .breed-type, .found-time {
         .header {
+            cursor: pointer;
             border-top: 1px solid lightgray;
             padding: 10px;
             text-transform: uppercase;
@@ -114,35 +114,34 @@ label.checkbox {
             background-color: white;
             padding: 10px;
             //font-size: small;
+            display: none;
         }
     }
 
     .sex-type, .size-type {
-        text-align: center;
+        .options {
+            text-align: center;
 
-        i {
-            display: inline-block;
-            margin: 0 5px;
-            padding: 10px;
-            border-radius: 10px;
-            background-color: @background-color;
+            i {
+                display: inline-block;
+                margin: 0 5px;
+                padding: 10px;
+                border-radius: 10px;
+                background-color: @background-color;
 
-            &.active {
-                background-color: @green-color;
+                &.active {
+                    background-color: @green-color;
+                }
             }
         }
-    }
-
-    .additional-options {
-        border-top: 1px solid lightgray;
-        padding: 10px;
     }
 
     .breed-type {
         .search {
             border-top: 1px solid lightgray;
             padding: 5px 10px;
-            //background-color: white;
+            background-color: white;
+            display: none;
             
             input {
                 border: none;
@@ -156,9 +155,9 @@ label.checkbox {
         }
     }
 
-    //hide
-    .sex-type, .size-type, .color-type {
-        display: none;
+    .additional-options {
+        border-top: 1px solid lightgray;
+        padding: 10px;
     }
 
     .result-count {

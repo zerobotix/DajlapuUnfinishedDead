@@ -1,1 +1,1 @@
-﻿
+﻿$(".js-menu-found").addClass("active");

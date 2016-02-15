@@ -208,6 +208,7 @@
     <Content Include="Content\icons\social-vkontakte.png" />
     <Content Include="Content\images\home-bottom.jpg" />
     <Content Include="Content\images\slider-1.jpg" />
+    <Content Include="Scripts\animal-list.js" />
     <Content Include="Styles\lib\normalize.css" />
     <Content Include="Content\samples\dog-1.png" />
     <Content Include="Content\samples\dog-10.png" />
@@ -322,6 +323,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Animal\List.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
