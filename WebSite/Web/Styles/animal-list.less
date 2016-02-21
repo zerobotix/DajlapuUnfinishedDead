@@ -5,43 +5,6 @@
 @footer-height: 50px;
 @filter-width: 250px;
 
-label.checkbox {
-    padding-left: 20px;
-    position: relative;
-    font-weight: normal;
-
-    .checkbox-icon {
-        position: absolute;
-        display: inline-block;
-        width: 15px;
-        height: 15px;
-        left: 0;
-        top: 3px;
-        border: 1px solid gray;
-        background-color: white;
-        border-radius: 2px;
-    }
-
-    input:checked + .checkbox-icon:after {
-        /*content: "\f00c"; 
-        content: "\f096"; //fa-square-o fa-check-square-o
-        font-family: FontAwesome;*/
-        content: "✔";
-        width: 14px;
-        height: 14px;
-        position: absolute;
-        left: 0;
-        top: 0;
-        margin-left: -1px;
-        margin-top: -4px;
-        color: @green-color;
-    }
-
-    input {
-        display: none;
-    }
-}
-
 #filter-form {
     position: fixed;
     left: 0;
@@ -64,21 +27,7 @@ label.checkbox {
         padding: 2px;
 
         .button {
-            display: inline-block;
-            padding: 3px;
-            border: 1px solid lightgray;
-            border-radius: 3px;
-            background-color: transparent;
-            color: black;
-            //font-size: 13px;
             width: 100px;
-            margin: 0 2px;
-            cursor: pointer;
-
-            &.active {
-                background-color: @green-color;
-                border-color: @green-color;
-            }
         }
     }
 
@@ -98,66 +47,38 @@ label.checkbox {
             padding: 10px;
             text-transform: uppercase;
             //background-color: @background-color;
-
-            &:after {
-                content: "+";
-                float: right;
-            }
-
-            &.active:after {
-                content: "–"
-            }
         }
 
         .options {
             border-top: 1px solid lightgray;
             background-color: white;
-            padding: 10px;
-            //font-size: small;
-            display: none;
+            padding: 10px 15px;
         }
     }
 
-    .sex-type, .size-type {
-        .options {
-            text-align: center;
-
-            i {
-                display: inline-block;
-                margin: 0 5px;
-                padding: 10px;
-                border-radius: 10px;
-                background-color: @background-color;
-
-                &.active {
-                    background-color: @green-color;
-                }
-            }
-        }
+    .sex-type .options, .size-type .options  {
+        text-align: center;
     }
 
-    .breed-type {
-        .search {
-            border-top: 1px solid lightgray;
-            padding: 5px 10px;
-            background-color: white;
-            display: none;
+    .breed-type .search {
+        border-top: 1px solid lightgray;
+        padding: 5px 10px;
+        background-color: white;
             
-            input {
-                border: none;
-                background-color: transparent;
-                outline: none;
-            }
+        input {
+            border: none;
+            background-color: transparent;
+            outline: none;
+        }
 
-            .search-icon {
-                float: right;
-            }
+        .search-icon {
+            float: right;
         }
     }
 
     .additional-options {
         border-top: 1px solid lightgray;
-        padding: 10px;
+        padding: 10px 15px;
     }
 
     .result-count {
@@ -175,10 +96,14 @@ label.checkbox {
     top: @navbar-height;
     bottom: @footer-height;
     right: 0;
+
+    &.loading {
+        opacity: 0.5;
+    }
 }
 
 #animals-list {
-    position:absolute;
+    position: absolute;
     left: 0;
     top: 0;
     bottom: 0;
@@ -187,16 +112,39 @@ label.checkbox {
     overflow-x: hidden;
     background-color: @background-color;
     padding: 5px;
-    
+
     .animal-preview {
         display: block;
         float: left;
         padding: 5px;
         width: 20%;
         opacity: 0.85;
+        position: relative;
 
         &:hover {
             opacity: 1;
+        }
+
+        .foreground {
+            position: absolute;
+            left: 5px;
+            right: 5px;
+            top: 5px;
+            bottom: 5px;
+            background-color: transparent;
+
+            text-align: center;
+            padding-top: 40%;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        &.js-dead .foreground {
+            background-color: rgba(0, 0, 0, 0.60);
+        }
+
+        &.js-sos .foreground {
+            background-color: rgba(255, 0, 0, 0.50);
         }
 
         img {

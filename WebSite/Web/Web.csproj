@@ -208,12 +208,77 @@
     <Content Include="Content\icons\social-vkontakte.png" />
     <Content Include="Content\images\home-bottom.jpg" />
     <Content Include="Content\images\slider-1.jpg" />
+    <Content Include="Content\svg-icons\cat-black.svg" />
+    <Content Include="Content\svg-icons\cat-blue.svg" />
+    <Content Include="Content\svg-icons\cat-gray.svg" />
+    <Content Include="Content\svg-icons\cat-green.svg" />
+    <Content Include="Content\svg-icons\cat-white.svg" />
+    <Content Include="Content\svg-icons\checkbox-check-black.svg" />
+    <Content Include="Content\svg-icons\checkbox-check-blue.svg" />
+    <Content Include="Content\svg-icons\checkbox-check-green.svg" />
+    <Content Include="Content\svg-icons\checkbox-check-white.svg" />
+    <Content Include="Content\svg-icons\checkbox-check.svg" />
+    <Content Include="Content\svg-icons\checkbox-checked.svg" />
+    <Content Include="Content\svg-icons\checkbox-empty.svg" />
+    <Content Include="Content\svg-icons\dog-black.svg" />
+    <Content Include="Content\svg-icons\dog-blue.svg" />
+    <Content Include="Content\svg-icons\dog-gray.svg" />
+    <Content Include="Content\svg-icons\dog-green.svg" />
+    <Content Include="Content\svg-icons\dog-white.svg" />
+    <Content Include="Content\svg-icons\nav-feedback.svg" />
+    <Content Include="Content\svg-icons\nav-paw.svg" />
+    <Content Include="Content\svg-icons\nav-profile.svg" />
+    <Content Include="Content\svg-icons\sex-female-black.svg" />
+    <Content Include="Content\svg-icons\sex-female-blue.svg" />
+    <Content Include="Content\svg-icons\sex-female-gray.svg" />
+    <Content Include="Content\svg-icons\sex-female-green.svg" />
+    <Content Include="Content\svg-icons\sex-female-white.svg" />
+    <Content Include="Content\svg-icons\sex-male-black.svg" />
+    <Content Include="Content\svg-icons\sex-male-blue.svg" />
+    <Content Include="Content\svg-icons\sex-male-gray.svg" />
+    <Content Include="Content\svg-icons\sex-male-green.svg" />
+    <Content Include="Content\svg-icons\sex-male-white.svg" />
+    <Content Include="Content\svg-icons\sex-unknown-black.svg" />
+    <Content Include="Content\svg-icons\sex-unknown-blue.svg" />
+    <Content Include="Content\svg-icons\sex-unknown-gray.svg" />
+    <Content Include="Content\svg-icons\sex-unknown-green.svg" />
+    <Content Include="Content\svg-icons\sex-unknown-white.svg" />
+    <Content Include="Content\svg-icons\size-large-cat-black.svg" />
+    <Content Include="Content\svg-icons\size-large-cat-blue.svg" />
+    <Content Include="Content\svg-icons\size-large-cat-gray.svg" />
+    <Content Include="Content\svg-icons\size-large-cat-green.svg" />
+    <Content Include="Content\svg-icons\size-large-cat-white.svg" />
+    <Content Include="Content\svg-icons\size-large-dog-black.svg" />
+    <Content Include="Content\svg-icons\size-large-dog-blue.svg" />
+    <Content Include="Content\svg-icons\size-large-dog-gray.svg" />
+    <Content Include="Content\svg-icons\size-large-dog-green.svg" />
+    <Content Include="Content\svg-icons\size-large-dog-white.svg" />
+    <Content Include="Content\svg-icons\size-medium-cat-black.svg" />
+    <Content Include="Content\svg-icons\size-medium-cat-blue.svg" />
+    <Content Include="Content\svg-icons\size-medium-cat-gray.svg" />
+    <Content Include="Content\svg-icons\size-medium-cat-green.svg" />
+    <Content Include="Content\svg-icons\size-medium-cat-white.svg" />
+    <Content Include="Content\svg-icons\size-medium-dog-black.svg" />
+    <Content Include="Content\svg-icons\size-medium-dog-blue.svg" />
+    <Content Include="Content\svg-icons\size-medium-dog-gray.svg" />
+    <Content Include="Content\svg-icons\size-medium-dog-green.svg" />
+    <Content Include="Content\svg-icons\size-medium-dog-white.svg" />
+    <Content Include="Content\svg-icons\size-small-cat-black.svg" />
+    <Content Include="Content\svg-icons\size-small-cat-blue.svg" />
+    <Content Include="Content\svg-icons\size-small-cat-gray.svg" />
+    <Content Include="Content\svg-icons\size-small-cat-green.svg" />
+    <Content Include="Content\svg-icons\size-small-cat-white.svg" />
+    <Content Include="Content\svg-icons\size-small-dog-black.svg" />
+    <Content Include="Content\svg-icons\size-small-dog-blue.svg" />
+    <Content Include="Content\svg-icons\size-small-dog-gray.svg" />
+    <Content Include="Content\svg-icons\size-small-dog-green.svg" />
+    <Content Include="Content\svg-icons\size-small-dog-white.svg" />
     <Content Include="Scripts\animal-list.js" />
+    <Content Include="Scripts\shared\controls.js" />
+    <Content Include="Scripts\shared\_layout.js" />
     <Content Include="Styles\lib\normalize.css" />
     <Content Include="Content\samples\dog-1.png" />
-    <Content Include="Content\samples\dog-10.png" />
     <Content Include="Content\samples\dog-11.png" />
-    <Content Include="Content\samples\dog-12.png" />
     <Content Include="Content\samples\dog-13.png" />
     <Content Include="Content\samples\dog-14.png" />
     <Content Include="Content\samples\dog-15.png" />
@@ -224,10 +289,9 @@
     <Content Include="Content\samples\dog-2.png" />
     <Content Include="Content\samples\dog-20.png" />
     <Content Include="Content\samples\dog-21.png" />
-    <Content Include="Content\samples\dog-22.png" />
-    <Content Include="Content\samples\dog-23.png" />
-    <Content Include="Content\samples\dog-24.png" />
     <Content Include="Content\samples\dog-3.png" />
+    <Content Include="Content\samples\dog-10.png" />
+    <Content Include="Content\samples\dog-12.png" />
     <Content Include="Content\samples\dog-4.png" />
     <Content Include="Content\samples\dog-5.png" />
     <Content Include="Content\samples\dog-6.png" />
@@ -273,6 +337,7 @@
     <Content Include="Content\fonts\HelveticaNeueCyr-Light.eot" />
     <Content Include="Content\fonts\HelveticaNeueCyr-Light.ttf" />
     <Content Include="Content\fonts\HelveticaNeueCyr-Light.woff" />
+    <Content Include="Styles\shared\controls.less" />
     <None Include="Styles\shared\fonts.less" />
     <Content Include="Styles\shared\fonts.css">
       <DependentUpon>fonts.less</DependentUpon>
@@ -323,7 +388,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Animal\List.cs" />
+    <Compile Include="Models\Animal\SearchOptionsClientModel.cs" />
+    <Compile Include="Models\Animal\SearchResultServerModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -391,6 +457,12 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Styles\bootstrap\mixins\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Contracts\Contracts.csproj">
+      <Project>{d774db50-5460-40a2-997f-5f98820355a8}</Project>
+      <Name>Contracts</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
