@@ -70,13 +70,13 @@ function AnimalListModel() {
 
                 var searchResults = [];
                 $.each(response.ShortInfoList, function (index, item) {
-                    var status = item.AnimalStatus == 'empty' ? '' : item.AnimalStatus;
+                    var status = item.AnimalStatus === "empty" ? "" : item.AnimalStatus;
                     var shortInfo = {
                         status: item.AnimalStatus,
                         imgUrl: item.MediumPhotoUrl,
                         id: item.AnimalId,
                         text: status,
-                        style: 'js-' + status,
+                        style: "js-" + status,
                     };
                     searchResults.push(shortInfo);
                 });
@@ -99,10 +99,10 @@ function AnimalListModel() {
 }
 ko.applyBindings(new AnimalListModel());
 
-$(".js-menu-database").addClass("active");
+$(".js-menu-database").addClass("js-active");
 
 } catch(e) {
-    alert('Ошибка ' + e.name + ":" + e.message + "\n" + e.stack);
+    alert(e.name + ":" + e.message + "\n" + e.stack);
 }
 
 //debug

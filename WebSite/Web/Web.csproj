@@ -14,7 +14,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DajLapu.Web</RootNamespace>
-    <AssemblyName>DajLapu</AssemblyName>
+    <AssemblyName>DajLapu.Web</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -273,9 +273,20 @@
     <Content Include="Content\svg-icons\size-small-dog-gray.svg" />
     <Content Include="Content\svg-icons\size-small-dog-green.svg" />
     <Content Include="Content\svg-icons\size-small-dog-white.svg" />
+    <Content Include="conventions.txt" />
     <Content Include="Scripts\animal-list.js" />
     <Content Include="Scripts\shared\controls.js" />
+    <Content Include="Scripts\shared\enums.js">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>enums.tt</DependentUpon>
+    </Content>
+    <Content Include="Scripts\shared\enums.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>enums.js</LastGenOutput>
+    </Content>
     <Content Include="Scripts\shared\_layout.js" />
+    <None Include="Scripts\_references.js" />
     <Content Include="Styles\lib\normalize.css" />
     <Content Include="Content\samples\dog-1.png" />
     <Content Include="Content\samples\dog-11.png" />
@@ -384,12 +395,16 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="Controllers\AnimalController.cs" />
+    <Compile Include="Controllers\SharedController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Animal\SearchOptionsClientModel.cs" />
-    <Compile Include="Models\Animal\SearchResultServerModel.cs" />
+    <Compile Include="Helpers\EnumHelper.cs" />
+    <Compile Include="Models\Animal\AddRequestModel.cs" />
+    <Compile Include="Models\Animal\AddViewModel.cs" />
+    <Compile Include="Models\Animal\SearchRequestModel.cs" />
+    <Compile Include="Models\Animal\SearchResponseModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -457,12 +472,16 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Styles\bootstrap\mixins\" />
+    <Folder Include="Views\Enums\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Contracts\Contracts.csproj">
       <Project>{d774db50-5460-40a2-997f-5f98820355a8}</Project>
       <Name>Contracts</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

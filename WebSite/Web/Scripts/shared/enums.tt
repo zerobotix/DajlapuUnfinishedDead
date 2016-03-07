@@ -1,0 +1,26 @@
+﻿<# /*
+	msdn T4 getting started: https://msdn.microsoft.com/en-us/library/dd820620.aspx
+	tangible T4 Editor: https://visualstudiogallery.msdn.microsoft.com/784cf592-b797-4d4d-ad33-331fcf63faad
+	assembly path: http://stackoverflow.com/questions/16962170/t4-template-adding-assembly-of-existing-project-in-solution 
+*/ #>
+<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="$(TargetDir)DajLapu.Contracts.dll" #>
+<#@ assembly name="$(TargetPath)" #> 
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="DajLapu.Contracts.Enums" #>
+<#@ import namespace="DajLapu.Web.Helpers" #>
+<#@ output extension=".js" #>
+<# 
+	var sharedEnums = new List<Type>
+    {
+        typeof (AdvertTypes),
+        typeof (AnimalTypes),
+        typeof (SexTypes),
+        typeof (SizeTypes),
+        typeof (AnimalStatusTypes)
+    };
+
+    var javascript = EnumHelper.GenerateJavaScriptVariable(sharedEnums);
+#>
+<#= javascript #>

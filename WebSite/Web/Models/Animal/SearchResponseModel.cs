@@ -34,7 +34,7 @@ namespace DajLapu.Web.Models.Animal
         public string AnimalStatus { get; set; } // todo: replace string with enum
     }
 
-    public class SearchResultServerModel
+    public class SearchResponseModel
     {
         public int TotalResultsCount { get; set; }
 

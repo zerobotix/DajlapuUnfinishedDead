@@ -7,43 +7,52 @@ namespace DajLapu.Web.Controllers
 {
     public class AnimalController : Controller
     {
-        public ActionResult Index()
-        {
-            return View();
-        }
-
         [HttpGet]
-        public ActionResult Add()
+        public ActionResult Add(string id)
         {
-            return View();
+            var advertType = id.ToLower() == "lost" ? AdvertTypes.Lost : AdvertTypes.Found;
+
+            var model = new // todo: (anonimous objects and dynamics) or AddViewModel?
+            {
+                Breeds = Db_GetBreeds(),
+                Colors = Db_GetColors(),
+                AdvertType = advertType
+            };
+
+            return View(model);
         }
 
         [HttpPost]
-        public JsonResult Add(int x)
+        public JsonResult Add(AddRequestModel model)
         {
-            return Json(x);
+            return Json(new { Success = true });
         }
 
         [HttpGet]
         public ActionResult List()
         {
-            //var model = GetFilterOptions();
-            return View();
+            var model = new
+            {
+                Breeds = Db_GetBreeds(),
+                Colors = Db_GetColors(),
+            };
+
+            return View(model);
         }
 
         [HttpPost]
-        public JsonResult List(SearchOptionsClientModel searchOptions)
+        public JsonResult List(SearchRequestModel model)
         {
             // todo: convert strings to enums into object that should be passed to api request
 
-            var result = new SearchResultServerModel();
+            var result = new SearchResponseModel();
 
             for (var i = 0; i < 64; i++)
             {
-                var status = AnimalStatuses.Empty;
-                if (i % 7 == 5) status = AnimalStatuses.Dead;
-                if (i % 7 == 3) status = AnimalStatuses.Sos;
-                if (i % 7 == 2) status = AnimalStatuses.Housing;
+                var status = AnimalStatusTypes.Empty;
+                if (i % 7 == 5) status = AnimalStatusTypes.Dead;
+                if (i % 7 == 3) status = AnimalStatusTypes.Sos;
+                if (i % 7 == 2) status = AnimalStatusTypes.Housing;
 
                 var shortInfo = new AnimalShortInfo()
                 {
@@ -70,6 +79,31 @@ namespace DajLapu.Web.Controllers
             result.TotalResultsCount = 234;
 
             return Json(result);
+        }
+
+        private List<dynamic> Db_GetColors()
+        {
+            return new List<dynamic>
+            {
+                new {Name = "красный", Id = 0},
+                new {Name = "синий", Id = 1},
+                new {Name = "желтый", Id = 2},
+                new {Name = "фиолетовый", Id = 3},
+                new {Name = "серебристо-бежевый", Id = 4}
+            };
+        }
+
+        private List<dynamic> Db_GetBreeds()
+        {
+            return new List<dynamic>
+            {
+                new {Name = "лабрадорский гибралтар", Id = 0},
+                new {Name = "такса", Id = 1},
+                new {Name = "отвратительная порода с очень длинным названием", Id = 2},
+                new {Name = "овчарочка", Id = 3},
+                new {Name = "котёнок вообще", Id = 4},
+                new {Name = "сиамская", Id = 5}
+            };
         }
     }
 }

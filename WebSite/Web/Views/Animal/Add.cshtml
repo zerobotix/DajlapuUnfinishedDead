@@ -1,4 +1,5 @@
-﻿@{
+﻿@using DajLapu.Contracts.Enums
+@{
     ViewBag.Title = "Добавление";
 }
 
@@ -8,6 +9,7 @@
 
 @section Scripts {
     <script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=Xc91SP-rHaQMdt5vAtjj_5Vq-AeAT7HR&lang=ru_RU&id=add-map"></script>
+    <script>var ServerModel = (@Html.Raw(Json.Encode(Model)));</script>
     <script src="~/Scripts/animal-add.js"></script>
 }
 
@@ -21,42 +23,80 @@
         <i class="hint-icon">?</i>
         <div class="hint-content"></div>
     </div>
-    <form>
+    <form data-bind="with: input, css: formColor">
         <fieldset>
             <div class="animal-type">
-                <i class="dog-icon"></i>
-                <i class="cat-icon active"></i>
+                @*<div class="animal-type"> <!-- использование чекбоксов было бы right-way - форму можно было бы сабмитить
+                    <label>
+                        <i class="dog-icon"></i>
+                        <input type="radio" value="dog" data-bind="checked: animalType" />
+                    </label>
+                    <label>
+                        <i class="cat-icon"></i>
+                        <input type="radio" value="cat" data-bind="checked: animalType" />
+                    </label>
+                </div>*@
+                <i class="dog-icon" data-bind="active: { state: animal, value: 'dog' }"></i>
+                <i class="cat-icon" data-bind="active: { state: animal, value: 'cat' }"></i>
             </div>
+
             <div class="sex-type">
-                <i class="male-icon">М</i>
-                <i class="female-icon">Ж</i>
-                @*<i class="unknown-icon"></i>*@
+                <i class="male-icon" data-bind="active: { state: sex, value: 'male' }"></i>
+                <i class="female-icon" data-bind="active: { state: sex, value: 'female' }"></i>
             </div>
             <div class="size-type">
-                <i class="s-size-icon">S</i>
-                <i class="m-size-icon">M</i>
-                <i class="l-size-icon">L</i>
+                <div data-bind="visible: animal() == 'dog'">
+                    <i class="s-size-dog-icon" data-bind="active: { state: size, value: 'small' }"></i>
+                    <i class="m-size-dog-icon" data-bind="active: { state: size, value: 'medium' }"></i>
+                    <i class="l-size-dog-icon" data-bind="active: { state: size, value: 'large' }"></i>
+                </div>
+                <div data-bind="visible: animal() != 'dog'">
+                    <i class="s-size-cat-icon" data-bind="active: { state: size, value: 'small' }"></i>
+                    <i class="l-size-cat-icon" data-bind="active: { state: size, value: 'large' }"></i>
+                </div>
             </div>
         </fieldset>
         <fieldset>
             <div class="color-type">
-                <select><option>окрас</option></select>
+                <select multiple data-bind="options: $root.available.colors, optionsText: 'Name', selectedOptions: colors">colors</select>
+
+                @*<ul data-bind="foreach: $root.available.colors">
+                    <li class="checkbox" data-bind="active: { state: $parent.colors, value: $parent.id }">
+                        <i class="checkbox-icon"></i>
+                        <label data-bind="text: name"></label>
+                    </li>
+                </ul>*@
             </div>
+
             <div class="breed-type">
-                <select><option>порода</option></select>
+                <select data-bind="options: $root.available.breeds, optionsText: 'Name', value: breed">colors</select>
+
+                @*<div class="search">
+                    <input type="text" placeholder="Поиск..." />
+                    <i class="search-icon">S</i>
+                </div>
+                <div class="options">
+                    <ul data-bind="foreach: $root.available.breeds">
+                        <li class="checkbox" data-bind="active: { state: $parent.breed, value: $parent.id }">
+                            <i class="checkbox-icon"></i>
+                            <label data-bind="text: name"></label>
+                        </li>
+                    </ul>
+                </div>*@
             </div>
+
             <div class="found-time">
-                <input type="text" placeholder="время обнаружения" />
+                <input type="date" placeholder="время обнаружения" data-bind="value: foundTime" />
             </div>
             <div class="phone">
-                <input type="text" placeholder="телефон" />
+                <input type="text" placeholder="телефон" data-bind="value: contactPhone" />
             </div>
             <div class="email">
-                <input type="text" placeholder="e-mail" />
+                <input type="text" placeholder="e-mail" data-bind="value: contactEmail" />
             </div>
         </fieldset>
         <fieldset>
-            <textarea placeholder="подробное описание"></textarea>
+            <textarea placeholder="подробное описание" data-bind="value: description" ></textarea>
         </fieldset>
         <fieldset>
             <div class="photos">
@@ -66,19 +106,19 @@
             </div>
             <div class="additional-options">
                 <label>
-                    <input type="checkbox" />
+                    <input type="radio" value="@((int)AnimalStatusTypes.Housing)" data-bind="checked: status" />
                     Передержка
                 </label>
                 <label>
-                    <input type="checkbox" />
+                    <input type="radio" value="@((int)AnimalStatusTypes.Sos)" data-bind="checked: status" />
                     SOS
                 </label>
                 <label>
-                    <input type="checkbox" />
+                    <input type="radio" value="@((int)AnimalStatusTypes.Dead)" data-bind="checked: status" />
                     RIP
                 </label>
             </div>
-            <button type="submit">Добавить</button>
+            <button data-bind="click: $root.addButtonClick">Добавить</button>
         </fieldset>
     </form>
 </div>

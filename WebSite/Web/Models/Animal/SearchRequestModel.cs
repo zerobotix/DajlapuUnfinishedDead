@@ -5,7 +5,7 @@ using System.Web;
 
 namespace DajLapu.Web.Models.Animal
 {
-    public class SearchOptionsClientModel
+    public class SearchRequestModel
     {
         public string SearchType { get; set; }
         public string AnimalType { get; set; }

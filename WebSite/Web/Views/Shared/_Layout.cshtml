@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Дай лапу</title>
     @*<link href="~/Styles/lib/normalize.css" rel="stylesheet" type="text/css" />*@
-    <link href="~/Styles/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" /> @*выпилить нахуй*@
+    <link href="~/Styles/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" /> <!--выпилить нахуй-->
     <link href="~/Styles/shared/_layout.css" rel="stylesheet" type="text/css" />
     @RenderSection("Styles", false)
 </head>
@@ -24,8 +24,8 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="@Url.Action("List", "Animal")" class="database-button js-menu-database">Доска объявлений</a></li>
-                    <li><a href="@Url.Action("Add", "Animal")" class="found-button js-menu-found">Найден</a></li>
-                    <li><a href="@Url.Action("Add", "Animal")" class="lost-button js-menu-lost">Пропал</a></li>
+                    <li><a href="@Url.Action("Add", "Animal", new { id = "Found" })" class="found-button js-menu-found">Найден</a></li>
+                    <li><a href="@Url.Action("Add", "Animal", new { id = "Lost" })" class="lost-button js-menu-lost">Пропал</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#"><i class="paw-icon"></i>О нас</a></li>
@@ -58,6 +58,8 @@
     <script src="~/Scripts/lib/jquery-2.2.0.min.js"></script>
     <script src="~/Scripts/lib/bootstrap.min.js"></script>
     <script src="~/Scripts/lib/knockout-3.4.0.js"></script>
+
+    <script src="~/Scripts/shared/enums.js"></script>
     <script src="~/Scripts/shared/_layout.js"></script>
     <script src="~/Scripts/shared/controls.js"></script>
     @RenderSection("Scripts", false)

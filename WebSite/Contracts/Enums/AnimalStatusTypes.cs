@@ -1,6 +1,6 @@
 ﻿namespace DajLapu.Contracts.Enums
 {
-    public enum AnimalStatuses
+    public enum AnimalStatusTypes
     {
         Empty = 0,
         Dead = 1,

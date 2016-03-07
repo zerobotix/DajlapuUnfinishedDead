@@ -70,7 +70,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Enums\AnimalStatuses.cs" />
+    <Compile Include="Enums\AdvertTypes.cs" />
+    <Compile Include="Enums\AnimalStatusTypes.cs" />
+    <Compile Include="Enums\AnimalTypes.cs" />
+    <Compile Include="Enums\SexTypes.cs" />
+    <Compile Include="Enums\SizeTypes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Requests\AccountBindingModels.cs" />
     <Compile Include="Responses\AccountViewModels.cs" />

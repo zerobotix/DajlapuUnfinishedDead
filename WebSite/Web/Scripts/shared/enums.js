@@ -1,0 +1,2 @@
+﻿ 
+var Enums = Object.freeze({ AdvertTypes: { Found: 1, Lost: 2 }, AnimalTypes: { Dog: 1, Cat: 2 }, SexTypes: { Male: 1, Female: 2 }, SizeTypes: { Small: 1, Medium: 2, Large: 3 }, AnimalStatusTypes: { Empty: 0, Dead: 1, Sos: 2, Housing: 3 } });
