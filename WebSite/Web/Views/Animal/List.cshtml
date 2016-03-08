@@ -8,39 +8,40 @@
 
 @section Scripts {
     <script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=Xc91SP-rHaQMdt5vAtjj_5Vq-AeAT7HR&lang=ru_RU&id=search-map"></script>
+    <script>var ServerModel = (@Html.Raw(Json.Encode(Model)));</script>
     <script src="~/Scripts/animal-list.js"></script>
 }
 
-<div id="filter-form" data-bind="css: formColor">
+<div id="filter-form" data-bind="with: input, css: formColor">
     <div class="form-header">Доска объявлений</div>
 
     <div class="search-type">
-        <div class="button" data-bind="active: { state: searchType, value: 'found' }">Найден</div>
-        <div class="button" data-bind="active: { state: searchType, value: 'lost' }">Пропал</div>
+        <div class="button" data-bind="active: { state: advertType, value: Enums.AdvertTypes.Found }">Найден</div>
+        <div class="button" data-bind="active: { state: advertType, value: Enums.AdvertTypes.Lost }">Пропал</div>
     </div>
     <div class="animal-type">
-        <i class="dog-icon" data-bind="active: { state: animalType, value: 'dog' }"></i>
-        <i class="cat-icon" data-bind="active: { state: animalType, value: 'cat' }"></i>
+        <i class="dog-icon" data-bind="active: { state: animal, value: Enums.AnimalTypes.Dog }"></i>
+        <i class="cat-icon" data-bind="active: { state: animal, value: Enums.AnimalTypes.Cat }"></i>
     </div>
 
     <div class="sex-type js-accordion">
         <div class="header js-header">Пол</div>
         <div class="options js-body">
-            <i class="male-icon" data-bind="active: { state: sexTypes, value: 'male' }"></i>
-            <i class="female-icon" data-bind="active: { state: sexTypes, value: 'female' }"></i>
+            <i class="male-icon" data-bind="active: { state: sexes, value: Enums.SexTypes.Male }"></i>
+            <i class="female-icon" data-bind="active: { state: sexes, value: Enums.SexTypes.Female }"></i>
         </div>
     </div>
     <div class="size-type js-accordion">
         <div class="header js-header">Размер</div>
         <div class="options js-body">
-            <div data-bind="visible: animalType() == 'dog'">
-                <i class="s-size-dog-icon" data-bind="active: { state: sizeTypes, value: 'small' }"></i>
-                <i class="m-size-dog-icon" data-bind="active: { state: sizeTypes, value: 'medium' }"></i>
-                <i class="l-size-dog-icon" data-bind="active: { state: sizeTypes, value: 'large' }"></i>
+            <div data-bind="visible: animal() == Enums.AnimalTypes.Dog">
+                <i class="s-size-dog-icon" data-bind="active: { state: sizes, value: Enums.SizeTypes.Small }"></i>
+                <i class="m-size-dog-icon" data-bind="active: { state: sizes, value: Enums.SizeTypes.Medium }"></i>
+                <i class="l-size-dog-icon" data-bind="active: { state: sizes, value: Enums.SizeTypes.Large }"></i>
             </div>
-            <div data-bind="visible: animalType() != 'dog'">
-                <i class="s-size-cat-icon" data-bind="active: { state: sizeTypes, value: 'small' }"></i>
-                <i class="l-size-cat-icon" data-bind="active: { state: sizeTypes, value: 'large' }"></i>
+            <div data-bind="visible: animal() != Enums.AnimalTypes.Dog">
+                <i class="s-size-cat-icon" data-bind="active: { state: sizes, value: Enums.SizeTypes.Small }"></i>
+                <i class="l-size-cat-icon" data-bind="active: { state: sizes, value: Enums.SizeTypes.Large }"></i>
             </div>
         </div>
     </div>
@@ -48,10 +49,10 @@
     <div class="color-type js-accordion">
         <div class="header js-header">Окрас</div>
         <div class="options js-body">
-            <ul data-bind="foreach: availableColors">
-                <li class="checkbox" data-bind="active: { state: $root.colorTypes, value: id }">
+            <ul data-bind="foreach: $root.available.colors">
+                <li class="checkbox" data-bind="active: { state: $root.input.colors, value: Id }">
                     <i class="checkbox-icon"></i>
-                    <label data-bind="text: name"></label>
+                    <label data-bind="text: Name"></label>
                 </li>
             </ul>
         </div>
@@ -65,10 +66,10 @@
                 <i class="search-icon">S</i>
             </div>
             <div class="options">
-                <ul data-bind="foreach: availableBreeds">
-                    <li class="checkbox" data-bind="active: { state: $root.breedTypes, value: id }">
+                <ul data-bind="foreach:  $root.available.breeds">
+                    <li class="checkbox" data-bind="active: { state: $root.input.breeds, value: Id }">
                         <i class="checkbox-icon"></i>
-                        <label data-bind="text: name"></label>
+                        <label data-bind="text: Name"></label>
                     </li>
                 </ul>
             </div>
@@ -84,22 +85,22 @@
     </div>
 
     <div class="additional-options">
-        <div class="checkbox" data-bind="active: { state: animalStatuses, value: 'dead' }">
+        <div class="checkbox" data-bind="active: { state: statuses, value: Enums.AnimalStatusTypes.Dead }">
             <i class="checkbox-icon"></i>
             <label>RIP</label>
         </div>
-        <div class="checkbox" data-bind="active: { state: animalStatuses, value: 'help' }">
+        <div class="checkbox" data-bind="active: { state: statuses, value: Enums.AnimalStatusTypes.Sos }">
             <i class="checkbox-icon"></i>
             <label>SOS</label>
         </div>
-        <div class="checkbox" data-bind="active: { state: animalStatuses, value: 'housing' }">
+        <div class="checkbox" data-bind="active: { state: statuses, value: Enums.AnimalStatusTypes.Housing }">
             <i class="checkbox-icon"></i>
             <label>Передержка</label>
         </div>
     </div>
 
     <div class="result-count">
-        Найдено: <span data-bind="text: totalResultsCount"></span> объявлений
+        Найдено: <span data-bind="text: $root.totalResultsCount"></span> объявлений
     </div>
 </div>
 

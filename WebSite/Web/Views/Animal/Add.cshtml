@@ -36,23 +36,23 @@
                         <input type="radio" value="cat" data-bind="checked: animalType" />
                     </label>
                 </div>*@
-                <i class="dog-icon" data-bind="active: { state: animal, value: 'dog' }"></i>
-                <i class="cat-icon" data-bind="active: { state: animal, value: 'cat' }"></i>
+                <i class="dog-icon" data-bind="active: { state: animal, value: Enums.AnimalTypes.Dog }"></i>
+                <i class="cat-icon" data-bind="active: { state: animal, value: Enums.AnimalTypes.Cat }"></i>
             </div>
 
             <div class="sex-type">
-                <i class="male-icon" data-bind="active: { state: sex, value: 'male' }"></i>
-                <i class="female-icon" data-bind="active: { state: sex, value: 'female' }"></i>
+                <i class="male-icon" data-bind="active: { state: sex, value: Enums.SexTypes.Male }"></i>
+                <i class="female-icon" data-bind="active: { state: sex, value: Enums.SexTypes.Female }"></i>
             </div>
             <div class="size-type">
-                <div data-bind="visible: animal() == 'dog'">
-                    <i class="s-size-dog-icon" data-bind="active: { state: size, value: 'small' }"></i>
-                    <i class="m-size-dog-icon" data-bind="active: { state: size, value: 'medium' }"></i>
-                    <i class="l-size-dog-icon" data-bind="active: { state: size, value: 'large' }"></i>
+                <div data-bind="visible: animal() == Enums.AnimalTypes.Dog">
+                    <i class="s-size-dog-icon" data-bind="active: { state: size, value: Enums.SizeTypes.Small }"></i>
+                    <i class="m-size-dog-icon" data-bind="active: { state: size, value: Enums.SizeTypes.Medium }"></i>
+                    <i class="l-size-dog-icon" data-bind="active: { state: size, value: Enums.SizeTypes.Large }"></i>
                 </div>
-                <div data-bind="visible: animal() != 'dog'">
-                    <i class="s-size-cat-icon" data-bind="active: { state: size, value: 'small' }"></i>
-                    <i class="l-size-cat-icon" data-bind="active: { state: size, value: 'large' }"></i>
+                <div data-bind="visible: animal() != Enums.AnimalTypes.Dog">
+                    <i class="s-size-cat-icon" data-bind="active: { state: size, value: Enums.SizeTypes.Small }"></i>
+                    <i class="l-size-cat-icon" data-bind="active: { state: size, value: Enums.SizeTypes.Large }"></i>
                 </div>
             </div>
         </fieldset>

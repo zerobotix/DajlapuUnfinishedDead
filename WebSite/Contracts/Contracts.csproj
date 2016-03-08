@@ -50,6 +50,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Requests\AccountBindingModels.cs" />
     <Compile Include="Responses\AccountViewModels.cs" />
+    <Compile Include="Types\DropdownOption.cs" />
+    <Compile Include="Types\Location.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -1,6 +1,4 @@
-﻿try {
-
-function AnimalAddModel(model, enums) {
+﻿function AnimalAddModel(model, enums) {
     var self = this;
 
     this.input = {
@@ -79,7 +77,12 @@ function AnimalAddModel(model, enums) {
         });
     }
 }
-ko.applyBindings(new AnimalAddModel(ServerModel, Enums));
+
+try {
+    ko.applyBindings(new AnimalAddModel(ServerModel, Enums));
+} catch (e) {
+    alert(e.name + ":" + e.message + "\n" + e.stack);
+}
 
 if (ServerModel.AdvertType === Enums.AdvertTypes.Found) {
     $(".js-menu-found").addClass("js-active");
@@ -87,6 +90,3 @@ if (ServerModel.AdvertType === Enums.AdvertTypes.Found) {
     $(".js-menu-lost").addClass("js-active");
 }
 
-} catch (e) {
-    alert(e.name + ":" + e.message + "\n" + e.stack);
-}

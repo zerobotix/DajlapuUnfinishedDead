@@ -396,8 +396,10 @@
     <Compile Include="Helpers\EnumHelper.cs" />
     <Compile Include="Models\Animal\AddRequestModel.cs" />
     <Compile Include="Models\Animal\AddViewModel.cs" />
+    <Compile Include="Models\Animal\ListViewModel.cs" />
     <Compile Include="Models\Animal\SearchRequestModel.cs" />
     <Compile Include="Models\Animal\SearchResponseModel.cs" />
+    <Compile Include="Models\ResponseModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

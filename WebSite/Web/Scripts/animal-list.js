@@ -1,38 +1,26 @@
-﻿try {
-
-var enums = { // todo: share enums from C# to JS
-    SearchTypes: {
-    }
-}
-
-function AnimalListModel() {
+﻿function AnimalListModel(model, enums) {
     var self = this;
 
-    this.searchType = ko.observable("found");
-    this.animalType = ko.observable("dog");
-    this.sexTypes = ko.observableArray([]);
-    this.sizeTypes = ko.observableArray([]);
-    this.colorTypes = ko.observableArray([]);
-    this.breedTypes = ko.observableArray([]);
-    this.animalStatuses = ko.observableArray([]);
+    this.input = {
+        advertType: ko.observable(enums.AdvertTypes.Found),
+        animal: ko.observable(enums.AnimalTypes.Dog),
+        sexes: ko.observableArray([]),
+        sizes: ko.observableArray([]),
+        colors: ko.observableArray([]),
+        breeds: ko.observableArray([]),
+        statuses: ko.observableArray([])
+    }
 
-    this.availableColors = [
-        { name: "красный", id: 0 },
-        { name: "синий", id: 1 },
-        { name: "желтый", id: 2 },
-    ];
-    
-    this.availableBreeds = [
-        { name: "порода 1", id: 0 },
-        { name: "порода 2", id: 1 },
-        { name: "порода 3", id: 2 },
-    ];
+    this.available = {
+        colors: model.Colors,
+        breeds: model.Breeds
+    }
 
     this.formColor = ko.computed(function () {
-        switch (self.searchType()) {
-            case "found":
+        switch (self.input.advertType()) {
+            case enums.AdvertTypes.Found:
                 return "js-green";
-            case "lost":
+            case enums.AdvertTypes.Lost:
                 return "js-blue";
             default:
                 return "js-black";
@@ -46,7 +34,7 @@ function AnimalListModel() {
 
     function loadResults() {
         self.isResultsLoading(true);
-
+        var input = self.input;
         $.ajax({
             url: "/Animal/List",
             type: "POST",
@@ -54,14 +42,15 @@ function AnimalListModel() {
             data: JSON.stringify({
                 //locationTopLeft: '',
                 //locationBottomRight: '',
-                SearchType: self.searchType(),
-                AnimalType: self.animalType(),
-                SizeTypes: self.sizeTypes(),
-                ColorTypes: self.colorTypes(),
-                BreedTypes: self.breedTypes(),
+                AdvertType: input.advertType(),
+                Animal: input.animal(),
+                Sexes: input.sexes(),
+                Sizes: input.sizes(),
+                Colors: input.colors(),
+                Breeds: input.breeds(),
                 //startDate: '',
                 //finishDate: '',
-                AnimalStatuses: self.animalStatuses(),
+                Statuses: input.statuses(),
                 //withMapPoints? // в первый раз мы загружаем часть shortInfo и все точки на карту
                                  // в последующие разы мы загружаем последующие части shortInfo БЕЗ точек на карту
             }),
@@ -70,7 +59,7 @@ function AnimalListModel() {
 
                 var searchResults = [];
                 $.each(response.ShortInfoList, function (index, item) {
-                    var status = item.AnimalStatus === "empty" ? "" : item.AnimalStatus;
+                    var status = item.AnimalStatus === "empty" ? "" : item.AnimalStatus; //todo: write getStatusStyle(enumStatus) = ".js-status"
                     var shortInfo = {
                         status: item.AnimalStatus,
                         imgUrl: item.MediumPhotoUrl,
@@ -87,23 +76,24 @@ function AnimalListModel() {
         });
     }
 
-    self.searchType.subscribe(loadResults);
-    self.animalType.subscribe(loadResults);
-    self.sexTypes.subscribe(loadResults);
-    self.sizeTypes.subscribe(loadResults);
-    self.colorTypes.subscribe(loadResults);
-    self.breedTypes.subscribe(loadResults);
-    self.animalStatuses.subscribe(loadResults);
+    self.input.advertType.subscribe(loadResults);
+    self.input.animal.subscribe(loadResults);
+    self.input.sexes.subscribe(loadResults);
+    self.input.sizes.subscribe(loadResults);
+    self.input.colors.subscribe(loadResults);
+    self.input.breeds.subscribe(loadResults);
+    self.input.statuses.subscribe(loadResults);
 
     loadResults();
 }
-ko.applyBindings(new AnimalListModel());
+
+try {
+    ko.applyBindings(new AnimalListModel(ServerModel, Enums));
+} catch (e) {
+    alertException(e);
+}
 
 $(".js-menu-database").addClass("js-active");
-
-} catch(e) {
-    alert(e.name + ":" + e.message + "\n" + e.stack);
-}
 
 //debug
 //$(".breed-type.js-accordion").trigger("click");

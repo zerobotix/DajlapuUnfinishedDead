@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DajLapu.Contracts.Types
+{
+    // simple alternative to native GeoCoordinate class
+    public class Location
+    {
+        public double Latitude { get; set; }
+
+        public double Longitude { get; set; }
+    }
+}

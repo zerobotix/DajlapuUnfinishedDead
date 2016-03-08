@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using DajLapu.Contracts.Enums
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -25,8 +26,8 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="@Url.Action("List", "Animal")" class="database-button js-menu-database">Доска объявлений</a></li>
-                    <li><a href="@Url.Action("Add", "Animal", new { id = "Found" })" class="found-button js-menu-found">Найден</a></li>
-                    <li><a href="@Url.Action("Add", "Animal", new { id = "Lost" })" class="lost-button js-menu-lost">Пропал</a></li>
+                    <li><a href="@Url.Action("Add", "Animal", new { id = AdvertTypes.Found })" class="found-button js-menu-found">Найден</a></li>
+                    <li><a href="@Url.Action("Add", "Animal", new { id = AdvertTypes.Lost })" class="lost-button js-menu-lost">Пропал</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#"><i class="paw-icon"></i>О нас</a></li>

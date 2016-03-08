@@ -1,17 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
+using DajLapu.Contracts.Enums;
 
 namespace DajLapu.Web.Models.Animal
 {
     public class SearchRequestModel
     {
-        public string SearchType { get; set; }
-        public string AnimalType { get; set; }
-        public IList<string> SizeTypes { get; set; }
-        public IList<string> ColorTypes { get; set; }
-        public IList<string> BreedTypes { get; set; }
-        public IList<string> AnimalStatuses { get; set; }
+        public AdvertTypes AdvertType { get; set; }
+
+        public AnimalTypes Animal { get; set; }
+
+        public IList<SizeTypes> Sizes { get; set; }
+
+        public IList<SexTypes> Sexes { get; set; }
+
+        public IList<int> ColorIds { get; set; }
+
+        public IList<int> BreedIds { get; set; }
+
+        public IList<AnimalStatusTypes> Statuses { get; set; }
     }
 }

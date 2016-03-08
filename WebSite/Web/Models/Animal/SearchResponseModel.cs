@@ -4,42 +4,36 @@ using System.Linq;
 using System.Web;
 
 using DajLapu.Contracts.Enums;
+using DajLapu.Contracts.Types;
 
 namespace DajLapu.Web.Models.Animal
 {
-    public class Location // alternative to native GeoCoordinate class
+    public class SearchResponseModel : ResponseModel
     {
-        public double Latitude { get; set; }
+        public class MapInfo
+        {
+            public int AnimalId { get; set; }
 
-        public double Longitude { get; set; }
-    }
+            // icon on map
+            public string SmallPhotoUrl { get; set; }
 
-    public class AnimalMapInfo
-    {
-        public int AnimalId { get; set; }
+            public Location Location { get; set; }
+        }
 
-        // icon on map
-        public string SmallPhotoUrl { get; set; }
+        public class ShortInfo
+        {
+            public int AnimalId { get; set; }
 
-        public Location Location { get; set; }
-    }
+            // preview thumbnail in results list
+            public string MediumPhotoUrl { get; set; }
 
-    public class AnimalShortInfo
-    {
-        public int AnimalId { get; set; }
+            public AnimalStatusTypes Status { get; set; }
+        }
 
-        // preview thumbnail in results list
-        public string MediumPhotoUrl { get; set; }
-
-        public string AnimalStatus { get; set; } // todo: replace string with enum
-    }
-
-    public class SearchResponseModel
-    {
         public int TotalResultsCount { get; set; }
 
-        public IList<AnimalMapInfo> MapInfoList { get; set; } = new List<AnimalMapInfo>();
+        public IList<MapInfo> MapInfoList { get; set; }
 
-        public IList<AnimalShortInfo> ShortInfoList { get; set; } =  new List<AnimalShortInfo>();
+        public IList<ShortInfo> ShortInfoList { get; set; }
     }
 }

@@ -1,7 +1,10 @@
-﻿using DajLapu.Contracts.Enums;
+﻿using System;
+using DajLapu.Contracts.Enums;
 using DajLapu.Web.Models.Animal;
 using System.Collections.Generic;
 using System.Web.Mvc;
+using DajLapu.Contracts.Types;
+using DajLapu.Web.Models;
 
 namespace DajLapu.Web.Controllers
 {
@@ -10,9 +13,13 @@ namespace DajLapu.Web.Controllers
         [HttpGet]
         public ActionResult Add(string id)
         {
-            var advertType = id.ToLower() == "lost" ? AdvertTypes.Lost : AdvertTypes.Found;
+            AdvertTypes advertType;
+            if (!Enum.TryParse(id, true, out advertType))
+            {
+                advertType = AdvertTypes.Found;
+            }
 
-            var model = new // todo: (anonimous objects and dynamics) or AddViewModel?
+            var model = new AddViewModel
             {
                 Breeds = Db_GetBreeds(),
                 Colors = Db_GetColors(),
@@ -25,13 +32,13 @@ namespace DajLapu.Web.Controllers
         [HttpPost]
         public JsonResult Add(AddRequestModel model)
         {
-            return Json(new { Success = true });
+            return Json(new ResponseModel { Success = true });
         }
 
         [HttpGet]
         public ActionResult List()
         {
-            var model = new
+            var model = new ListViewModel
             {
                 Breeds = Db_GetBreeds(),
                 Colors = Db_GetColors(),
@@ -43,9 +50,8 @@ namespace DajLapu.Web.Controllers
         [HttpPost]
         public JsonResult List(SearchRequestModel model)
         {
-            // todo: convert strings to enums into object that should be passed to api request
-
-            var result = new SearchResponseModel();
+            var shortInfoList = new List<SearchResponseModel.ShortInfo>();
+            var mapInfoList = new List<SearchResponseModel.MapInfo>();
 
             for (var i = 0; i < 64; i++)
             {
@@ -54,14 +60,14 @@ namespace DajLapu.Web.Controllers
                 if (i % 7 == 3) status = AnimalStatusTypes.Sos;
                 if (i % 7 == 2) status = AnimalStatusTypes.Housing;
 
-                var shortInfo = new AnimalShortInfo()
+                var shortInfo = new SearchResponseModel.ShortInfo
                 {
-                    AnimalStatus = status.ToString().ToLower(),
+                    Status = status,
                     MediumPhotoUrl = @"/Content/samples/dog-" + (i % 21 + 1) + ".png",
                     AnimalId = i
                 };
 
-                var mapInfo = new AnimalMapInfo()
+                var mapInfo = new SearchResponseModel.MapInfo
                 {
                     AnimalId = i,
                     Location = new Location // октябрьская площадь
@@ -72,37 +78,43 @@ namespace DajLapu.Web.Controllers
                     SmallPhotoUrl = @"/Content/samples/dog-" + (i % 21 + 1) + ".png",
                 };
 
-                result.ShortInfoList.Add(shortInfo);
-                result.MapInfoList.Add(mapInfo);
+                shortInfoList.Add(shortInfo);
+                mapInfoList.Add(mapInfo);
             }
 
-            result.TotalResultsCount = 234;
+            var result = new SearchResponseModel
+            {
+                ShortInfoList = shortInfoList,
+                MapInfoList = mapInfoList,
+                TotalResultsCount = 234,
+                Success = true
+            };
 
             return Json(result);
         }
 
-        private List<dynamic> Db_GetColors()
+        private List<DropdownOption> Db_GetColors()
         {
-            return new List<dynamic>
+            return new List<DropdownOption>
             {
-                new {Name = "красный", Id = 0},
-                new {Name = "синий", Id = 1},
-                new {Name = "желтый", Id = 2},
-                new {Name = "фиолетовый", Id = 3},
-                new {Name = "серебристо-бежевый", Id = 4}
+                new DropdownOption {Name = "красный", Id = 0},
+                new DropdownOption {Name = "синий", Id = 1},
+                new DropdownOption {Name = "желтый", Id = 2},
+                new DropdownOption {Name = "фиолетовый", Id = 3},
+                new DropdownOption {Name = "серебристо-бежевый", Id = 4}
             };
         }
 
-        private List<dynamic> Db_GetBreeds()
+        private List<DropdownOption> Db_GetBreeds()
         {
-            return new List<dynamic>
+            return new List<DropdownOption>
             {
-                new {Name = "лабрадорский гибралтар", Id = 0},
-                new {Name = "такса", Id = 1},
-                new {Name = "отвратительная порода с очень длинным названием", Id = 2},
-                new {Name = "овчарочка", Id = 3},
-                new {Name = "котёнок вообще", Id = 4},
-                new {Name = "сиамская", Id = 5}
+                new DropdownOption {Name = "лабрадорский гибралтар", Id = 0},
+                new DropdownOption {Name = "такса", Id = 1},
+                new DropdownOption {Name = "отвратительная порода с очень длинным названием", Id = 2},
+                new DropdownOption {Name = "овчарочка", Id = 3},
+                new DropdownOption {Name = "котёнок вообще", Id = 4},
+                new DropdownOption {Name = "сиамская", Id = 5}
             };
         }
     }
