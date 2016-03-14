@@ -50,7 +50,8 @@
         <div class="header js-header">Окрас</div>
         <div class="options js-body">
             <ul data-bind="foreach: $root.available.colors">
-                <li class="checkbox" data-bind="active: { state: $root.input.colors, value: Id }">
+                <!-- todo: чёто этот active биндинг нихуя непонятный, лучше разделить на два -->
+                <li class="checkbox" data-bind="active: { state: $root.input.colors, value: $data }">
                     <i class="checkbox-icon"></i>
                     <label data-bind="text: Name"></label>
                 </li>
@@ -67,7 +68,7 @@
             </div>
             <div class="options">
                 <ul data-bind="foreach:  $root.available.breeds">
-                    <li class="checkbox" data-bind="active: { state: $root.input.breeds, value: Id }">
+                    <li class="checkbox" data-bind="active: { state: $root.input.breeds, value: $data }">
                         <i class="checkbox-icon"></i>
                         <label data-bind="text: Name"></label>
                     </li>
@@ -79,8 +80,8 @@
     <div class="found-time js-accordion">
         <div class="header js-header">Время обнаружения</div>
         <div class="options js-body">
-            <input type="date" />
-            <input type="date" />
+            <input id="js-start-date" type="text" data-bind="value: startDate" />
+            <input id="js-finish-date" type="text" data-bind="value: finishDate" />
         </div>
     </div>
 

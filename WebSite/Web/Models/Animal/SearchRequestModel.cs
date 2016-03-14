@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DajLapu.Contracts.Enums;
 
 namespace DajLapu.Web.Models.Animal
@@ -18,5 +19,9 @@ namespace DajLapu.Web.Models.Animal
         public IList<int> BreedIds { get; set; }
 
         public IList<AnimalStatusTypes> Statuses { get; set; }
+
+        public DateTime StartDate { get; set; }
+
+        public DateTime FinishDate { get; set; }
     }
 }

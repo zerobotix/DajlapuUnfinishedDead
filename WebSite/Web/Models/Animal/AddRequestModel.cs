@@ -30,6 +30,6 @@ namespace DajLapu.Web.Models.Animal
 
         public string Description { get; set; }
 
-        public IList<string> Photos { get; set; } // todo: string filename? int id? something other?
+        public IList<string> Photos { get; set; } // todo: string urls? string filenames? int ids?
     }
 }
