@@ -18,8 +18,20 @@
     }
 
     this.available = {
-        colors: model.Colors,
-        breeds: model.Breeds
+        colors: ko.computed(function() {
+            if (self.input.animal() === enums.AnimalTypes.Dog) {
+                return model.DogColors;
+            } else {
+                return model.CatColors;
+            }
+        }),
+        breeds: ko.computed(function() {
+            if (self.input.animal() === enums.AnimalTypes.Dog) {
+                return model.DogBreeds;
+            } else {
+                return model.CatBreeds;
+            }
+        })
     }
 
     this.formColor = ko.computed(function () {

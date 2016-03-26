@@ -10,6 +10,9 @@ namespace DajLapu.Web.Models.Animal
 {
     public class SearchResponseModel : ResponseModel
     {
+        /// <summary>
+        /// маркеры на карте
+        /// </summary>
         public class MapInfo
         {
             public int AnimalId { get; set; }
@@ -20,6 +23,9 @@ namespace DajLapu.Web.Models.Animal
             public Location Location { get; set; }
         }
 
+        /// <summary>
+        /// фотки-превьюшки собак
+        /// </summary>
         public class ShortInfo
         {
             public int AnimalId { get; set; }

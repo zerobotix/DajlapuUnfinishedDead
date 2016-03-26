@@ -18,8 +18,13 @@
 </div>
 
 <div id="add-form">
-    <div class="header">
+    <div class="found-header" data-bind="visible: input.advertType() == Enums.AdvertTypes.Found">
         Найден
+        <i class="hint-icon">?</i>
+        <div class="hint-content"></div>
+    </div>
+    <div class="lost-header" data-bind="visible: input.advertType() == Enums.AdvertTypes.Lost">
+        Пропал
         <i class="hint-icon">?</i>
         <div class="hint-content"></div>
     </div>
@@ -86,17 +91,17 @@
             </div>
 
             <div class="found-time">
-                <input type="date" placeholder="время обнаружения" data-bind="value: foundTime" />
+                <input type="date" placeholder="время обнаружения" data-bind="value: foundTime"/>
             </div>
             <div class="phone">
-                <input type="text" placeholder="телефон" data-bind="value: contactPhone" />
+                <input type="text" placeholder="телефон" data-bind="value: contactPhone"/>
             </div>
             <div class="email">
-                <input type="text" placeholder="e-mail" data-bind="value: contactEmail" />
+                <input type="text" placeholder="e-mail" data-bind="value: contactEmail"/>
             </div>
         </fieldset>
         <fieldset>
-            <textarea placeholder="подробное описание" data-bind="value: description" ></textarea>
+            <textarea placeholder="подробное описание" data-bind="value: description"></textarea>
         </fieldset>
         <fieldset>
             <div class="photos">
@@ -106,15 +111,15 @@
             </div>
             <div class="additional-options">
                 <label>
-                    <input type="radio" value="@((int)AnimalStatusTypes.Housing)" data-bind="checked: status" />
+                    <input type="radio" value="@((int) AnimalStatusTypes.Housing)" data-bind="checked: status"/>
                     Передержка
                 </label>
                 <label>
-                    <input type="radio" value="@((int)AnimalStatusTypes.Sos)" data-bind="checked: status" />
+                    <input type="radio" value="@((int) AnimalStatusTypes.Sos)" data-bind="checked: status"/>
                     SOS
                 </label>
                 <label>
-                    <input type="radio" value="@((int)AnimalStatusTypes.Dead)" data-bind="checked: status" />
+                    <input type="radio" value="@((int) AnimalStatusTypes.Dead)" data-bind="checked: status"/>
                     RIP
                 </label>
             </div>

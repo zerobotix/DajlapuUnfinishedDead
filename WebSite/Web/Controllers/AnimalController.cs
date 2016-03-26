@@ -19,10 +19,13 @@ namespace DajLapu.Web.Controllers
                 advertType = AdvertTypes.Found;
             }
 
+            // todo: заполнить данными из бд
             var model = new AddViewModel
             {
-                Breeds = Db_GetBreeds(),
-                Colors = Db_GetColors(),
+                CatBreeds = Db_GetBreeds(AnimalTypes.Cat),
+                CatColors = Db_GetColors(AnimalTypes.Cat),
+                DogBreeds = Db_GetBreeds(AnimalTypes.Dog),
+                DogColors = Db_GetColors(AnimalTypes.Dog),
                 AdvertType = advertType
             };
 
@@ -32,16 +35,20 @@ namespace DajLapu.Web.Controllers
         [HttpPost]
         public JsonResult Add(AddRequestModel model)
         {
+            // todo: сохранить все данные из модели в бд
             return Json(new ResponseModel { Success = true });
         }
 
         [HttpGet]
         public ActionResult List()
         {
+            // todo: заполнить данными из бд
             var model = new ListViewModel
             {
-                Breeds = Db_GetBreeds(),
-                Colors = Db_GetColors(),
+                CatBreeds = Db_GetBreeds(AnimalTypes.Cat),
+                CatColors = Db_GetColors(AnimalTypes.Cat),
+                DogBreeds = Db_GetBreeds(AnimalTypes.Dog),
+                DogColors = Db_GetColors(AnimalTypes.Dog),
             };
 
             return View(model);
@@ -50,6 +57,7 @@ namespace DajLapu.Web.Controllers
         [HttpPost]
         public JsonResult List(SearchRequestModel model)
         {
+            // todo: заполнить данными из бд в соответствии с данными из model
             var shortInfoList = new List<SearchResponseModel.ShortInfo>();
             var mapInfoList = new List<SearchResponseModel.MapInfo>();
 
@@ -93,28 +101,30 @@ namespace DajLapu.Web.Controllers
             return Json(result);
         }
 
-        private List<DropdownOption> Db_GetColors()
+        // todo: заглушка, удалить
+        private List<DropdownOption> Db_GetColors(AnimalTypes type)
         {
             return new List<DropdownOption>
             {
-                new DropdownOption {Name = "красный", Id = 0},
-                new DropdownOption {Name = "синий", Id = 1},
-                new DropdownOption {Name = "желтый", Id = 2},
-                new DropdownOption {Name = "фиолетовый", Id = 3},
-                new DropdownOption {Name = "серебристо-бежевый", Id = 4}
+                new DropdownOption {Name = "красный" + type, Id = 0},
+                new DropdownOption {Name = "синий" + type, Id = 1},
+                new DropdownOption {Name = "желтый" + type, Id = 2},
+                new DropdownOption {Name = "фиолетовый" + type, Id = 3},
+                new DropdownOption {Name = "серебристо-бежевый" + type, Id = 4}
             };
         }
 
-        private List<DropdownOption> Db_GetBreeds()
+        // todo: заглушка, удалить
+        private List<DropdownOption> Db_GetBreeds(AnimalTypes type)
         {
             return new List<DropdownOption>
             {
-                new DropdownOption {Name = "лабрадорский гибралтар", Id = 0},
-                new DropdownOption {Name = "такса", Id = 1},
-                new DropdownOption {Name = "отвратительная порода с очень длинным названием", Id = 2},
-                new DropdownOption {Name = "овчарочка", Id = 3},
-                new DropdownOption {Name = "котёнок вообще", Id = 4},
-                new DropdownOption {Name = "сиамская", Id = 5}
+                new DropdownOption {Name = "лабрадорский гибралтар" + type, Id = 0},
+                new DropdownOption {Name = "такса" + type, Id = 1},
+                new DropdownOption {Name = "отвратительная порода с очень длинным названием" + type, Id = 2},
+                new DropdownOption {Name = "овчарочка" + type, Id = 3},
+                new DropdownOption {Name = "котёнок вообще" + type, Id = 4},
+                new DropdownOption {Name = "сиамская" + type, Id = 5}
             };
         }
     }

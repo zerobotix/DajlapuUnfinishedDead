@@ -6,9 +6,13 @@ namespace DajLapu.Web.Models.Animal
 {
     public class AddViewModel
     {
-        public IList<DropdownOption> Breeds { get; set; } // todo: породы же могут быть котовые и собачьи
+        public IList<DropdownOption> CatBreeds { get; set; }
 
-        public IList<DropdownOption> Colors { get; set; }
+        public IList<DropdownOption> CatColors { get; set; }
+
+        public IList<DropdownOption> DogBreeds { get; set; }
+
+        public IList<DropdownOption> DogColors { get; set; }
 
         public AdvertTypes AdvertType { get; set; }
     }
