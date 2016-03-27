@@ -3,6 +3,7 @@
 /// <reference path="animal-list.js" />
 /// <reference path="home.js" />
 /// <reference path="lib/bootstrap.js" />
+/// <reference path="lib/chosen.jquery.js" />
 /// <reference path="lib/jquery.datetimepicker.js" />
 /// <reference path="lib/jquery-2.2.0.js" />
 /// <reference path="lib/knockout-3.4.0.js" />

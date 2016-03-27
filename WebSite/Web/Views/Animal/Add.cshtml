@@ -29,7 +29,7 @@
         <div class="hint-content"></div>
     </div>
     <form data-bind="with: input, css: formColor">
-        <fieldset>
+        <fieldset class="icons-block">
             <div class="animal-type">
                 @*<div class="animal-type"> <!-- использование чекбоксов было бы right-way - форму можно было бы сабмитить
                     <label>
@@ -44,11 +44,12 @@
                 <i class="dog-icon" data-bind="active: { state: animal, value: Enums.AnimalTypes.Dog }"></i>
                 <i class="cat-icon" data-bind="active: { state: animal, value: Enums.AnimalTypes.Cat }"></i>
             </div>
-
+            <hr />
             <div class="sex-type">
                 <i class="male-icon" data-bind="active: { state: sex, value: Enums.SexTypes.Male }"></i>
                 <i class="female-icon" data-bind="active: { state: sex, value: Enums.SexTypes.Female }"></i>
             </div>
+            <hr />
             <div class="size-type">
                 <div data-bind="visible: animal() == Enums.AnimalTypes.Dog">
                     <i class="s-size-dog-icon" data-bind="active: { state: size, value: Enums.SizeTypes.Small }"></i>
@@ -63,35 +64,15 @@
         </fieldset>
         <fieldset>
             <div class="color-type">
-                <select multiple data-bind="options: $root.available.colors, optionsText: 'Name', selectedOptions: colors">colors</select>
-
-                @*<ul data-bind="foreach: $root.available.colors">
-                    <li class="checkbox" data-bind="active: { state: $parent.colors, value: $parent.id }">
-                        <i class="checkbox-icon"></i>
-                        <label data-bind="text: name"></label>
-                    </li>
-                </ul>*@
+                <select id="js-color-select" class="custom-select" multiple data-bind="options: $root.available.colors, optionsText: 'Name', selectedOptions: colors, optionsAfterRender: $root.sayShit2">colors</select>
             </div>
 
             <div class="breed-type">
-                <select data-bind="options: $root.available.breeds, optionsText: 'Name', value: breed">colors</select>
-
-                @*<div class="search">
-                    <input type="text" placeholder="Поиск..." />
-                    <i class="search-icon">S</i>
-                </div>
-                <div class="options">
-                    <ul data-bind="foreach: $root.available.breeds">
-                        <li class="checkbox" data-bind="active: { state: $parent.breed, value: $parent.id }">
-                            <i class="checkbox-icon"></i>
-                            <label data-bind="text: name"></label>
-                        </li>
-                    </ul>
-                </div>*@
+                <select id="js-breed-select" class="custom-select" data-bind="options: $root.available.breeds, optionsText: 'Name', value: breed, optionsCaption: '', optionsAfterRender: $root.sayShit">colors</select>
             </div>
 
             <div class="found-time">
-                <input type="date" placeholder="время обнаружения" data-bind="value: foundTime"/>
+                <input id="js-found-date" type="text" placeholder="время обнаружения" data-bind="value: foundTime"/>
             </div>
             <div class="phone">
                 <input type="text" placeholder="телефон" data-bind="value: contactPhone"/>

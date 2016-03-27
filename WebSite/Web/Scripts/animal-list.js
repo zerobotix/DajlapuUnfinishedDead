@@ -14,8 +14,20 @@
     }
 
     this.available = {
-        colors: model.Colors,
-        breeds: model.Breeds
+        colors: ko.computed(function () {
+            if (self.input.animal() === enums.AnimalTypes.Dog) {
+                return model.DogColors;
+            } else {
+                return model.CatColors;
+            }
+        }),
+        breeds: ko.computed(function () {
+            if (self.input.animal() === enums.AnimalTypes.Dog) {
+                return model.DogBreeds;
+            } else {
+                return model.CatBreeds;
+            }
+        })
     }
 
     this.formColor = ko.computed(function () {
@@ -34,12 +46,42 @@
 
     this.isResultsLoading = ko.observable(false);
 
+    function getStatusStyle(enumStatus) {
+        switch (enumStatus) {
+            case enums.AnimalStatusTypes.Sos:
+                return "js-sos";
+            case enums.AnimalStatusTypes.Dead:
+                return "js-dead";
+            case enums.AnimalStatusTypes.Housing:
+                return "js-housing";
+            default:
+                return "js-empty";
+        }
+    }
+
+    function getStatusText(enumStatus) {
+        switch (enumStatus) {
+            case enums.AnimalStatusTypes.Sos:
+                return "SOS";
+            case enums.AnimalStatusTypes.Dead:
+                return "RIP";
+            case enums.AnimalStatusTypes.Housing:
+                return "Передержка";
+            default:
+                return "";
+        }
+    }
+
     function loadResults() {
         self.isResultsLoading(true);
 
         var input = self.input;
 
         // todo: $.map to ids;
+        ////var list = ko.utils.arrayMap(self.vehicles(), function (item) {
+        ////    return item.Brand;
+        ////});
+
         var colorIds = [];
         for (var i = 0; i < input.colors().length; i++) {
             colorIds.push(input.colors()[i].Id);
@@ -74,14 +116,12 @@
 
                 var searchResults = [];
                 $.each(response.ShortInfoList, function (index, item) {
-                    var status = item.AnimalStatus === "empty" ? "" : item.AnimalStatus;
-                    //todo: write getStatusStyle(enumStatus) = ".js-status" or extend enum object to have a function
                     var shortInfo = {
-                        status: item.AnimalStatus,
+                        status: item.Status,
                         imgUrl: item.MediumPhotoUrl,
                         id: item.AnimalId,
-                        text: status,
-                        style: "js-" + status,
+                        text: getStatusText(item.Status),
+                        style: getStatusStyle(item.Status)
                     };
                     searchResults.push(shortInfo);
                 });
@@ -99,6 +139,9 @@
     self.input.colors.subscribe(loadResults);
     self.input.breeds.subscribe(loadResults);
     self.input.statuses.subscribe(loadResults);
+    self.input.startDate.subscribe(loadResults);
+    self.input.finishDate.subscribe(loadResults);
+
     self.input.startDate.subscribe(function() {
         console.log(self.input.startDate());
     });
@@ -124,7 +167,7 @@ var defaultDatetimepickerOptions = {
     yearStart: 2015,
     yearEnd: 2017,
     formatDate: "d.m.Y",
-    minDate: "05.03.2016",
+    minDate: "01.01.2016",
     maxDate: 0,
 }
 

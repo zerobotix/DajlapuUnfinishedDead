@@ -124,7 +124,18 @@ namespace DajLapu.Web.Controllers
                 new DropdownOption {Name = "отвратительная порода с очень длинным названием" + type, Id = 2},
                 new DropdownOption {Name = "овчарочка" + type, Id = 3},
                 new DropdownOption {Name = "котёнок вообще" + type, Id = 4},
-                new DropdownOption {Name = "сиамская" + type, Id = 5}
+                new DropdownOption {Name = "сиамская" + type, Id = 5},
+                new DropdownOption {Name = "овчарочка" + type, Id = 6},
+                new DropdownOption {Name = "овчарочка" + type, Id = 7},
+                new DropdownOption {Name = "овчарочка" + type, Id = 8},
+                new DropdownOption {Name = "овчарочка" + type, Id = 9},
+                new DropdownOption {Name = "овчарочка" + type, Id = 10},
+                new DropdownOption {Name = "овчарочка" + type, Id = 11},
+                new DropdownOption {Name = "овчарочка" + type, Id = 12},
+                new DropdownOption {Name = "овчарочка" + type, Id = 13},
+                new DropdownOption {Name = "овчарочка" + type, Id = 14},
+                new DropdownOption {Name = "овчарочка" + type, Id = 15},
+                new DropdownOption {Name = "овчарочка" + type, Id = 16},
             };
         }
     }

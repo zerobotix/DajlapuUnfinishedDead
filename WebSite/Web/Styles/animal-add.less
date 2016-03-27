@@ -1,4 +1,8 @@
-﻿.mixin-clearfix {
+﻿@green-color: #98d603;
+@blue-color: #27aae1;
+@background-color: #f4f2f1;
+
+.mixin-clearfix {
     &:after {
         content: " ";
         display: table;
@@ -14,6 +18,14 @@
 #add-form {
     .found-header, .lost-header {
         text-align: center;
+        text-transform: uppercase;
+        line-height: 25px;
+    }
+    .found-header {
+        background-color: @green-color;
+    }
+    .lost-header {
+        background-color: @blue-color;
     }
 
     form {
@@ -22,6 +34,40 @@
         fieldset {
             float: left;
             width: 25%;
+            padding: 10px 5px 0 5px;
+            //border: 1px solid red;
+
+            &.icons-block {
+                text-align: center;
+                i {
+                    margin: 10px 5px;
+                }
+                hr {
+                    height: 1px;
+                    border: 0;
+                    border-top: 1px solid lightgray;
+                    margin: 10px;
+                }
+            }
+
+            input[type=text], select, textarea {
+                width: 100%;
+                display: block;
+                border: 1px solid lightgray;
+                border-radius: 3px;
+                padding: 5px;
+                margin-bottom: 10px;
+            }
+
+            .custom-select {
+                width: 100%;
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            textarea {
+                height: 240px;
+            }
         }
     }
 }

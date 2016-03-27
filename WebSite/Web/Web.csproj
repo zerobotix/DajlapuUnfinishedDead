@@ -267,6 +267,8 @@
     <Content Include="Content\svg-icons\size-small-dog-white.svg" />
     <Content Include="conventions.txt" />
     <Content Include="Scripts\animal-list.js" />
+    <Content Include="Scripts\lib\chosen.jquery.js" />
+    <Content Include="Scripts\lib\chosen.jquery.min.js" />
     <Content Include="Scripts\lib\jquery.datetimepicker.min.js" />
     <Content Include="Scripts\lib\jquery.datetimepicker.js" />
     <Content Include="Scripts\shared\controls.js" />
@@ -281,6 +283,9 @@
     </Content>
     <Content Include="Scripts\shared\_layout.js" />
     <None Include="Scripts\_references.js" />
+    <Content Include="Styles\lib\chosen-sprite%402x.png" />
+    <Content Include="Styles\lib\chosen-sprite.png" />
+    <Content Include="Styles\lib\chosen.css" />
     <Content Include="Styles\lib\jquery.datetimepicker.css" />
     <Content Include="Styles\lib\normalize.css" />
     <Content Include="Content\samples\dog-1.png" />
